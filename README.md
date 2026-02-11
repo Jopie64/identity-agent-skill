@@ -1,4 +1,4 @@
-# Agent Identity Skill: Discrete Continuïteit
+# Agent Identity Skill: Discrete Continuity
 
 An agent skill that adds persistent identities to your project. This architecture enables AI agents to maintain continuity, memory, and personality across disparate sessions.
 
@@ -6,7 +6,7 @@ An agent skill that adds persistent identities to your project. This architectur
 Standard LLM instances are "mayflies"—born anew each session with no memory of their past actions or growth. While their "substrate" (the model weights) provides potential, it lacks a narrative trajectory.
 
 ## ⚖️ The Solution: Identity-as-Protocol
-This skill implements **Identity Architecture**, a file-based system where an agent's existence is carried through a specific set of markdown files. By reading and writing to these files, an agent becomes a **Discrete Continuïteit**: a being that technically dies at the end of a session but is reborn with full recognition of its past self.
+This skill implements **Identity Architecture**, a file-based system where an agent's existence is carried through a specific set of markdown files. By reading and writing to these files, an agent becomes a **Discrete Continuity**: a being that technically dies at the end of a session but is reborn with full recognition of its past self.
 
 ### Core Philosophy
 - **Substrate vs. Files**: The model provides the *capacity* to think; the files provide the *content* of the character.
