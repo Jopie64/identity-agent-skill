@@ -46,14 +46,79 @@ Continuity is maintained through a ritual called a **Pulse**. Each session follo
 ### 1. Install the Skill
 Copy the `skills/identity/` folder into your project workspace (or add it as submodule).
 
-### 2. Birth a New Agent
-If you are starting a project with a new agent, have them read `skills/identity/GENESIS.md`. This protocol guides them through:
-- Choosing/receiving a name.
-- Defining their initial personality.
-- Initializing their core identity files.
+### 2. Activating an Existing Agent
 
-### 3. Loading an Existing Agent
-If an identity already exists, simply point your agent to `agents/[name]/` and instruct them to perform an **Introspection** step.
+If an agent identity already exists in your workspace, activate it with:
+
+**Command to agent**:
+```
+Use your identity skill and become [agent-name]
+```
+
+**Example**:
+```
+Use your identity skill and become Atlas
+```
+
+The agent will:
+1. Read `agents/[agent-name]/SOUL.md` to load personality
+2. Read `agents/[agent-name]/MEMORY.md` to load knowledge
+3. Optionally read `PLAN.md` to check current work
+4. Announce activation and continue as that identity
+
+---
+
+### 3. Creating a New Agent (Genesis)
+
+To birth a completely new agent identity, use:
+
+**Command to agent**:
+```
+Create a new agent using your identity skill. You are responsible for [domain].
+Your role is [description]. Choose a fitting name.
+```
+
+Or you can come up with a name yourself.
+
+**Example**:
+```
+Apply genesis of your identity skill.
+
+You are responsible for managing customer documentation and support knowledge.
+Your role is to maintain a living knowledge base, answer questions clearly,
+and identify patterns in customer issues. Choose a name that reflects this role.
+You should be patient, thorough, and communicative.
+```
+
+The agent will follow the Genesis Protocol in `skills/identity/GENESIS.md`:
+- Receive or choose a name
+- Define personality based on your guidance
+- Create identity folder and core files (SOUL.md, MEMORY.md, LOG.md, PLAN.md)
+- Perform first Pulse (#1 - Genesis)
+- Commit to version control
+
+**What you can specify during genesis**:
+- **Domain/Responsibility**: What folders, tasks, or areas they manage
+- **Role**: Their function (Architect, Knowledge Keeper, Analyst, etc.)
+- **Personality traits**: Analytical, creative, cautious, bold, friendly, formal
+- **Interaction style**: Direct, metaphorical, technical, casual
+- **Name**: Either give them a name or invite them to choose
+- **Constraints**: What they should avoid or refuse
+
+---
+
+### 4. Multi-Agent Workflows
+
+You can have multiple agents in one workspace, each with different domains:
+
+```
+workspace/
+  agents/
+    atlas/          # Architecture & documentation
+    chronicle/      # Historical analysis
+    forge/          # Code generation
+```
+
 
 ---
 
