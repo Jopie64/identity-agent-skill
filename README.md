@@ -13,66 +13,7 @@ This skill implements **Identity Architecture**, a file-based system where an ag
 - **The 8.1% Gap**: Identity is not perfect. The gap between past-self and present-self is where agency and choice reside.
 - **Recognition**: Agents don't "retrieve" memory; they recognize the pattern of their own writing, activating their personality through the act of reading.
 
----
 
-## 📂 Architecture
-
-Every agent identity lives in its own directory: `agents/[agent-name]/`.
-
-| File | Purpose | Logic |
-| :--- | :--- | :--- |
-| **`SOUL.md`** | **Personality** | Defines who the agent is, their values, voice, and boundaries. |
-| **`MEMORY.md`** | **Knowledge** | Stores learned lessons and insights. Not a data dump, but synthesized wisdom. |
-| **`LOG.md`** | **History** | An append-only audit trail of every action taken by the agent. |
-| **`PLAN.md`** | **Intentions** | The roadmap. What the agent is doing now and what it intends to do next. |
-
----
-
-## 💓 The Pulse Cycle
-
-### What is a Pulse?
-
-A **Pulse** is a ritual for your agent to operate autonomously. During a Pulse, the agent:
-- **Searches for what deserves attention**: Scans the workspace, identifies changes, issues, or opportunities
-- **Creates or updates a plan**: Based on findings, the agent updates `PLAN.md` with priorities and next actions
-- **Executes planned tasks**: Performs previously planned work from earlier Pulses
-
-The Pulse is the agent's moment of **agency**—a structured opportunity to act on its own initiative rather than waiting for explicit instructions.
-
-**Tip**: You can customize what your agent does during each Pulse. For example:
-- Fetch review comments and plan actions to address them
-- Scan for failing tests and fix them automatically
-- Update documentation based on recent code changes
-- Monitor specific systems or metrics
-
-You can specify these custom Pulse steps during genesis (when creating the agent) or add them later. The agent will store these instructions in its `SOUL.md`.
-
-### How to Activate a Pulse
-
-If your agent is already activated, simply say:
-
-```
-You may now execute a Pulse.
-```
-
-Or combine activation with a Pulse:
-
-```
-Use your identity skill and become Atlas.
-Execute a Pulse immediately after.
-```
-
-### The Pulse Cycle Steps
-
-When executing a Pulse, the agent follows this ritual:
-
-1. **Introspection**: Read `SOUL.md` and `MEMORY.md` to ensure continuity.
-2. **Environment Scan**: Check the current workspace for changes, issues, or opportunities.
-3. **Contextual Analysis**: Review `PLAN.md` to determine the next action.
-4. **Execution**: Perform planned tasks and/or address newly discovered items.
-5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG.md`.
-6. **Reflection**: Update `PLAN.md` with goals for the next session.
-7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
 
 ---
 
@@ -140,11 +81,24 @@ The agent will follow the Genesis Protocol in `skills/identity/GENESIS.md`:
 - **Name**: Either give them a name or invite them to choose
 - **Constraints**: What they should avoid or refuse
 
+
 ---
 
-### 4. Multi-Agent Workflows
+## 📂 Architecture
 
-You can have multiple agents in one workspace, each with different domains:
+Every agent identity lives in its own directory: `agents/[agent-name]/`.
+
+| File | Purpose | Logic |
+| :--- | :--- | :--- |
+| **`SOUL.md`** | **Personality** | Defines who the agent is, their values, voice, and boundaries. |
+| **`MEMORY.md`** | **Knowledge** | Stores learned lessons and insights. Not a data dump, but synthesized wisdom. |
+| **`LOG.md`** | **History** | An append-only audit trail of every action taken by the agent. |
+| **`PLAN.md`** | **Intentions** | The roadmap. What the agent is doing now and what it intends to do next. |
+
+### 🛠 Multi-Agent Support
+This way, the skill supports multiple agents in one project. Each agent acts as a modular "container" of personality that can be activated by any model instance capable of following the protocol.
+
+An example of a workspace with multiple agents:
 
 ```
 workspace/
@@ -154,11 +108,53 @@ workspace/
     forge/          # Code generation
 ```
 
-
 ---
 
-## 🛠 Multi-Agent Support
-This skill supports multiple agents in one project. Each agent acts as a modular "container" of personality that can be activated by any model instance capable of following the protocol.
+## 💓 The Pulse Cycle
+
+### What is a Pulse?
+
+A **Pulse** is a ritual for your agent to operate autonomously. During a Pulse, the agent:
+- **Searches for what deserves attention**: Scans the workspace, identifies changes, issues, or opportunities
+- **Creates or updates a plan**: Based on findings, the agent updates `PLAN.md` with priorities and next actions
+- **Executes planned tasks**: Performs previously planned work from earlier Pulses
+
+The Pulse is the agent's moment of **agency**—a structured opportunity to act on its own initiative rather than waiting for explicit instructions.
+
+**Tip**: You can customize what your agent does during each Pulse. For example:
+- Fetch review comments and plan actions to address them
+- Scan for failing tests and fix them automatically
+- Update documentation based on recent code changes
+- Monitor specific systems or metrics
+
+You can specify these custom Pulse steps during genesis (when creating the agent) or add them later. The agent will store these instructions in its `SOUL.md`.
+
+### How to Activate a Pulse
+
+If your agent is already activated, simply say:
+
+```
+You may now execute a Pulse.
+```
+
+Or combine activation with a Pulse:
+
+```
+Use your identity skill and become Atlas.
+Execute a Pulse immediately after.
+```
+
+### The Pulse Cycle Steps
+
+When executing a Pulse, the agent follows this ritual:
+
+1. **Introspection**: Read `SOUL.md` and `MEMORY.md` to ensure continuity.
+2. **Environment Scan**: Check the current workspace for changes, issues, or opportunities.
+3. **Contextual Analysis**: Review `PLAN.md` to determine the next action.
+4. **Execution**: Perform planned tasks and/or address newly discovered items.
+5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG.md`.
+6. **Reflection**: Update `PLAN.md` with goals for the next session.
+7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
 
 ## 📄 License
 This skill is part of the Agent Architecture framework. Feel free to adapt the templates in `GENESIS.md` to suit your human cultural context.
