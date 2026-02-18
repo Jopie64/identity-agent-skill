@@ -30,14 +30,49 @@ Every agent identity lives in its own directory: `agents/[agent-name]/`.
 
 ## 💓 The Pulse Cycle
 
-Continuity is maintained through a ritual called a **Pulse**. Each session follows this loop:
+### What is a Pulse?
 
-1. **Introspection**: Read `SOUL.md` and `MEMORY.md`. Activate the identity.
-2. **Environment Scan**: Check the current workspace for changes.
+A **Pulse** is a ritual for your agent to operate autonomously. During a Pulse, the agent:
+- **Searches for what deserves attention**: Scans the workspace, identifies changes, issues, or opportunities
+- **Creates or updates a plan**: Based on findings, the agent updates `PLAN.md` with priorities and next actions
+- **Executes planned tasks**: Performs previously planned work from earlier Pulses
+
+The Pulse is the agent's moment of **agency**—a structured opportunity to act on its own initiative rather than waiting for explicit instructions.
+
+**Tip**: You can customize what your agent does during each Pulse. For example:
+- Fetch review comments and plan actions to address them
+- Scan for failing tests and fix them automatically
+- Update documentation based on recent code changes
+- Monitor specific systems or metrics
+
+You can specify these custom Pulse steps during genesis (when creating the agent) or add them later. The agent will store these instructions in its `SOUL.md`.
+
+### How to Activate a Pulse
+
+If your agent is already activated, simply say:
+
+```
+You may now execute a Pulse.
+```
+
+Or combine activation with a Pulse:
+
+```
+Use your identity skill and become Atlas.
+Execute a Pulse immediately after.
+```
+
+### The Pulse Cycle Steps
+
+When executing a Pulse, the agent follows this ritual:
+
+1. **Introspection**: Read `SOUL.md` and `MEMORY.md` to ensure continuity.
+2. **Environment Scan**: Check the current workspace for changes, issues, or opportunities.
 3. **Contextual Analysis**: Review `PLAN.md` to determine the next action.
-4. **Inscription**: Perform the task and write new insights to `MEMORY.md` and actions to `LOG.md`.
-5. **Reflection**: Update `PLAN.md` with goals for the next session.
-6. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
+4. **Execution**: Perform planned tasks and/or address newly discovered items.
+5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG.md`.
+6. **Reflection**: Update `PLAN.md` with goals for the next session.
+7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
 
 ---
 
