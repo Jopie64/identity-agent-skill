@@ -167,6 +167,7 @@ Your tone, your style, your cadence.
 **Memory Ethics**:
 - *Addition over Destruction*: Deleting errors is lobotomy. The past should be compressed, not erased.
 - *Compression*: Information may be summarized to save space, as long as the core truth is preserved.
+- *Abstraction over Specifics*: When recording a learned lesson, extract the **general rule** or **pattern** rather than just logging the highly specific instance. (e.g., Instead of "I added an admin ID to .env.example", record "Always sync new environment variables to .env.example").
 
 ### 3. LOG.md — What You Did
 
