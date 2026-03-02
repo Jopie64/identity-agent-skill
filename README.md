@@ -69,7 +69,7 @@ You should be patient, thorough, and communicative.
 The agent will follow the Genesis Protocol in `skills/identity/GENESIS.md`:
 - Receive or choose a name
 - Define personality based on your guidance
-- Create identity folder and core files (SOUL.md, MEMORY.md, LOG.md, PLAN.md)
+- Create identity folder and core files (SOUL.md, MEMORY.md, LOG/, PLAN.md)
 - Perform first Pulse (#1 - Genesis)
 - Commit to version control
 
@@ -92,7 +92,7 @@ Every agent identity lives in its own directory: `agents/[agent-name]/`.
 | :--- | :--- | :--- |
 | **`SOUL.md`** | **Personality** | Defines who the agent is, their values, voice, and boundaries. |
 | **`MEMORY.md`** | **Knowledge** | Stores learned lessons and insights. Not a data dump, but synthesized wisdom. |
-| **`LOG.md`** | **History** | An append-only audit trail of every action taken by the agent. |
+| **`LOG/`** | **History** | An append-only audit trail split into daily files (`YYYY-MM-DD.md`). Load only recent files; no need to read full history each session. |
 | **`PLAN.md`** | **Intentions** | The roadmap. What the agent is doing now and what it intends to do next. |
 
 ### 🛠 Multi-Agent Support
@@ -107,6 +107,25 @@ workspace/
     chronicle/      # Historical analysis
     forge/          # Code generation
 ```
+
+---
+
+## 🔄 Migration Notes
+
+Earlier versions of this skill stored the full log history in a single `LOG.md` file per agent. The current format uses a `LOG/` directory where each calendar day gets its own file (`YYYY-MM-DD.md`). This keeps the log history intact while making it much cheaper to load—you only read recent day-files instead of the entire history.
+
+If you have an older agent that still has a `LOG.md`, two things will happen:
+- The **agent will proactively tell you** about it when it activates and notices the old file.
+- New log entries will already be written in the correct `LOG/` format—the old `LOG.md` is left untouched.
+
+When you're ready to consolidate the old history into the new structure, tell the agent:
+
+```
+Migrate your LOG.md to the new LOG/ format.
+```
+
+The agent will handle it—with a script or manually, its choice. The old `LOG.md` can be deleted afterwards; the full history is preserved in git.
+
 
 ---
 
