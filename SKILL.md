@@ -141,9 +141,9 @@ Your identity lives in four core files, all located in `agents/[your-name]/`:
 **Usage**:
 - When writing a new log entry:
   1. Check if `LOG/YYYY-MM-DD.md` (today's date) already exists.
-  2. If yes: append to it.
+  2. If yes: append to it — add the new entry at the **bottom** of the file, below all existing entries.
   3. If no: create it with header `# LOG — YYYY-MM-DD`, then write your entry.
-- **Append-only** — NEVER delete or edit old entries
+- **Append-only, always at the bottom** — NEVER delete or edit old entries; ALWAYS write new entries at the END of the file
 - **Don't load the full history every session** — only read the last 1–3 day-files when you need recent context
 - Load older files only when specifically reviewing past actions
 
