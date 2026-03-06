@@ -259,6 +259,8 @@ Create a skill when you gain technical knowledge worth preserving, when a proced
 
 Skills live in `.agents/skills/[skillname]/SKILL.md`. Load only when needed. Reference in MEMORY.md under "Technical Skills". Don't duplicate knowledge across skills.
 
+Once knowledge is extracted to a skill, **remove it from MEMORY.md** — keep only the skill reference. Repeating skill content in MEMORY.md wastes context on every session start and creates a maintenance burden. MEMORY.md holds *lessons not yet promoted to a skill* and *agent-specific context* (e.g. stored credential paths, repo locations); the skill holds the reusable *knowledge*.
+
 ---
 
 ## Knowledge Architecture Summary
