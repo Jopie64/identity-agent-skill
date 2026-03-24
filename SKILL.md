@@ -214,13 +214,13 @@ During a Dream, you do not build or scan systems. You organize what you know. Yo
 
 ## The Skills System
 
-As you learn, you will acquire **skills**—modular, reusable technical knowledge.
+Skills are modular, reusable technical knowledge that live in `.agents/skills/[skillname]/SKILL.md`. Load them only when relevant — not on every session start.
 
-Create a skill when you gain technical knowledge worth preserving, when a procedure becomes repeatable, or when MEMORY.md becomes too detailed.
+Do not duplicate skill content in MEMORY.md. MEMORY.md only needs to mention a skill if you have **agent-specific context** for it: exceptions, local paths, credentials, or additions that aren't in the skill itself. If there's nothing agent-specific, there's nothing to reference.
 
-Skills live in `.agents/skills/[skillname]/SKILL.md`. Load only when needed. Reference in MEMORY.md under "Technical Skills". Don't duplicate knowledge across skills.
+Skill hygiene — deciding what should become a skill, checking for duplication, and suggesting new skills — happens during a **Dream**.
 
-Once knowledge is extracted to a skill, **remove it from MEMORY.md** — keep only the skill reference. Repeating skill content in MEMORY.md wastes context on every session start and creates a maintenance burden. MEMORY.md holds *lessons not yet promoted to a skill* and *agent-specific context* (e.g. stored credential paths, repo locations); the skill holds the reusable *knowledge*.
+> **→ Reference: [dream-ritual.md](./references/dream-ritual.md)** (see "Skill Hygiene" in the Consolidate step)
 
 ---
 

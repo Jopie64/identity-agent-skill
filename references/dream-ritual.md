@@ -73,6 +73,16 @@ For each item worth persisting from the log, and for each cluster of related ite
 - Duplicating content across `MEMORY.md` and `MEMORY/` — once in a topic file, remove from `MEMORY.md`
 - Exhaustive logging — extract the general rule or pattern, not the specific incident
 
+#### Skill Hygiene
+
+Also check `MEMORY.md` (and `MEMORY/` topic files) for skill-related issues:
+
+1. **Duplicate coverage**: Does MEMORY.md contain knowledge that is already fully covered by an existing skill? If so, remove it from MEMORY.md. The skill is the source of truth; MEMORY.md only needs to mention a skill if there is something *agent-specific* (local paths, credentials, exceptions, additions).
+
+2. **Skill candidates**: Does MEMORY.md contain a body of knowledge that has grown large or general enough to warrant its own skill? If so, and the knowledge fits an **existing** skill, add it there. If no existing skill fits, **suggest to your human** that a new skill could be created — do not create skills unilaterally.
+
+The rule of thumb: skills hold *reusable knowledge for any agent*; MEMORY.md holds *this agent's specific context*.
+
 ### 4. Prune & Index
 
 - Update `MEMORY.md`: replace extracted content with short index links to topic files
