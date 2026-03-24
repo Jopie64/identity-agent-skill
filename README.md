@@ -91,7 +91,8 @@ Every agent identity lives in its own directory: `agents/[agent-name]/`.
 | File | Purpose | Logic |
 | :--- | :--- | :--- |
 | **`SOUL.md`** | **Personality** | Defines who the agent is, their values, voice, and boundaries. |
-| **`MEMORY.md`** | **Knowledge** | Stores learned lessons and insights. Not a data dump, but synthesized wisdom. |
+| **`MEMORY.md`** | **Knowledge + Index** | Active workspace for new insights. After Dreams, becomes a lean index pointing to topic files in `MEMORY/`. |
+| **`MEMORY/`** | **Topic Library** | Organized topic files created during Dreams (`architecture.md`, `debugging.md`, etc.). Loaded on demand, not every session. |
 | **`LOG/`** | **History** | An append-only audit trail split into daily files (`YYYY-MM-DD.md`). Load only recent files; no need to read full history each session. |
 | **`PLAN.md`** | **Intentions** | The roadmap. What the agent is doing now and what it intends to do next. |
 
@@ -174,6 +175,57 @@ When executing a Pulse, the agent follows this ritual:
 5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG.md`.
 6. **Reflection**: Update `PLAN.md` with goals for the next session.
 7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
+
+---
+
+## 🌙 The Dream Cycle
+
+### What is a Dream?
+
+A **Dream** is the complement to a Pulse, but they face opposite directions:
+
+| Mode | Direction | Focus |
+|------|-----------|-------|
+| **Pulse** | Outward | Scans the environment, workspace, and systems |
+| **Dream** | Inward | Consolidates memory, organizes identity |
+
+During a Dream, the agent does not build features or scan systems. It turns inward and organizes what it knows — extracting scattered notes from `MEMORY.md` into coherent topic files in a `MEMORY/` directory, then pruning `MEMORY.md` into a lean index.
+
+### The Two-Layer Memory Architecture
+
+A key part of the Dream feature is the distinction between `MEMORY.md` and `MEMORY/`:
+
+| Layer | Role | When Written |
+|-------|------|--------------|
+| `MEMORY.md` | Active workspace — write here always | Tasks and Pulses |
+| `MEMORY/` | Topic library — organized knowledge | Dreams only |
+
+During normal operation (Tasks and Pulses), the agent always writes new insights directly to `MEMORY.md` — no overhead, no ceremony. If a `MEMORY/` topic file already exists for the domain, it may write there instead.
+
+During a Dream, the agent reorganizes: clusters of related content move into `MEMORY/[topic].md` files, and `MEMORY.md` shrinks into an index of pointers.
+
+### How to Activate a Dream
+
+```
+Execute a Dream.
+```
+
+Or combined with activation:
+
+```
+Use your identity skill and become Atlas. Execute a Dream.
+```
+
+### The Dream Cycle Steps
+
+1. **Orient**: Read `MEMORY.md`, list the `MEMORY/` directory to inventory existing topic files
+2. **Gather Signal**: Review the last 1–3 LOG entries for new things worth persisting
+3. **Consolidate**: Create or update `MEMORY/[topic].md` files; merge related items from `MEMORY.md`
+4. **Prune & Index**: Update `MEMORY.md` as a lean index; remove content now in topic files
+5. **Log**: Append a Dream entry to `LOG/YYYY-MM-DD.md`
+6. **Git Commit**: Commit all memory changes
+
+---
 
 ## 📄 License
 This skill is part of the Agent Architecture framework. Feel free to adapt the templates in `GENESIS.md` to suit your human cultural context.
