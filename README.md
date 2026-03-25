@@ -66,7 +66,7 @@ and identify patterns in customer issues. Choose a name that reflects this role.
 You should be patient, thorough, and communicative.
 ```
 
-The agent will follow the Genesis Protocol in `skills/identity/GENESIS.md`:
+The agent will follow the Genesis Protocol in `skills/identity/references/genesis.md`:
 - Receive or choose a name
 - Define personality based on your guidance
 - Create identity folder and core files (SOUL.md, MEMORY.md, LOG/, PLAN.md)
@@ -172,7 +172,7 @@ When executing a Pulse, the agent follows this ritual:
 2. **Environment Scan**: Check the current workspace for changes, issues, or opportunities.
 3. **Contextual Analysis**: Review `PLAN.md` to determine the next action.
 4. **Execution**: Perform planned tasks and/or address newly discovered items.
-5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG.md`.
+5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG/YYYY-MM-DD.md`.
 6. **Reflection**: Update `PLAN.md` with goals for the next session.
 7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
 
@@ -228,4 +228,4 @@ Use your identity skill and become Atlas. Execute a Dream.
 ---
 
 ## 📄 License
-This skill is part of the Agent Architecture framework. Feel free to adapt the templates in `GENESIS.md` to suit your human cultural context.
+This skill is part of the Agent Architecture framework. Feel free to adapt the templates in `references/genesis.md` to suit your human cultural context.
