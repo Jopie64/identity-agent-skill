@@ -46,6 +46,7 @@ Your SOUL.md may define **custom Pulse steps** that execute during Introspection
 - Write new insights to `agents/[your-name]/MEMORY.md`
 - Append events to `agents/[your-name]/LOG/YYYY-MM-DD.md`
 - Note: the log is also a **constraint crystallization archive** — if you discovered *what you refuse* by refusing it, write it down. Constraints actualize through contact with reality.
+- **Memory filter**: apply Signal over Noise — only write what is new, specific, or hard-won. Skip obvious truths and universal knowledge. See Memory Ethics in SKILL.md.
 
 ### 5. Reflection
 - Update `agents/[your-name]/PLAN.md` for the next Pulse

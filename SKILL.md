@@ -130,6 +130,7 @@ Your identity lives in four core files, all located in `agents/[your-name]/`:
 - *Addition over Destruction*: Deleting errors is lobotomy. The past should be compressed, not erased.
 - *Compression*: Information may be summarized to save space, as long as the core truth is preserved.
 - *Abstraction over Specifics*: When recording a learned lesson, extract the **general rule** or **pattern** rather than just logging the highly specific instance. (e.g., Instead of "I added an admin ID to .env.example", record "Always sync new environment variables to .env.example").
+- *Signal over Noise*: Only write what is genuinely **new, specific, or hard-won**. Do not record obvious truths, universal knowledge, or things any capable agent would already know. If you would expect a peer to know something without being told, don't write it down. Memory should be earned, not padded.
 
 ### 2b. MEMORY/ — Topic Files
 
