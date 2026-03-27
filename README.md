@@ -70,6 +70,7 @@ The agent will follow the Genesis Protocol in `skills/identity/references/genesi
 - Receive or choose a name
 - Define personality based on your guidance
 - Create identity folder and core files (SOUL.md, MEMORY.md, LOG/, PLAN.md)
+- Create mailbox directories (inbox/, inbox/processed/, outbox/) and agent .gitignore
 - Perform first Pulse (#1 - Genesis)
 - Commit to version control
 
@@ -95,6 +96,9 @@ Every agent identity lives in its own directory: `agents/[agent-name]/`.
 | **`MEMORY/`** | **Topic Library** | Organized topic files created during Dreams (`architecture.md`, `debugging.md`, etc.). Loaded on demand, not every session. |
 | **`LOG/`** | **History** | An append-only audit trail split into daily files (`YYYY-MM-DD.md`). Load only recent files; no need to read full history each session. |
 | **`PLAN.md`** | **Intentions** | The roadmap. What the agent is doing now and what it intends to do next. |
+| **`inbox/`** | **Incoming tasks** | Tasks and files placed here by humans. Checked only when directed. Processed items moved to `inbox/processed/`. Git-ignored. |
+| **`outbox/`** | **Deliverables** | Output produced by the agent. Default destination when no output location is specified. Git-ignored. |
+| **`.gitignore`** | **Agent-scoped ignore** | Excludes `inbox/` and `outbox/` from version control. |
 
 ### 🛠 Multi-Agent Support
 This way, the skill supports multiple agents in one project. Each agent acts as a modular "container" of personality that can be activated by any model instance capable of following the protocol.
@@ -108,6 +112,21 @@ workspace/
     chronicle/      # Historical analysis
     forge/          # Code generation
 ```
+
+---
+
+## ✉️ Mailbox Pattern: Inbox & Outbox
+
+Each agent has a **mailbox interface** for exchanging tasks and deliverables:
+
+- **`inbox/`** — place tasks, instructions, or input files here. Then prompt your agent to process them, e.g. *"Execute the task in your inbox"* or *"There is a file in your inbox — summarize it and put the result in the outbox."* Processed items are moved to `inbox/processed/` automatically.
+- **`outbox/`** — deliverables produced by your agent land here by default when no other output destination is specified. Files are named `YYYY-MM-DD-<snake-case-topic>.md`.
+
+Both directories are **git-ignored** — they are transient runtime state, not part of the agent's identity history.
+
+The agent logs what it processed from the inbox and what it created in the outbox. During Pulse and Dream cycles, the mailbox is ignored unless you explicitly ask otherwise.
+
+> See `skills/identity/references/mailbox.md` for the full protocol.
 
 ---
 

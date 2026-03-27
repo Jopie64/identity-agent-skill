@@ -224,6 +224,27 @@ This file holds WHAT YOU WILL DO.
 
 ---
 
+## Step 4b: Create Mailbox Directories
+
+Your agent communicates with the outside world through an inbox and an outbox. Create them now:
+
+```bash
+mkdir -p agents/[your-name]/inbox/processed
+mkdir -p agents/[your-name]/outbox
+```
+
+Then create a `.gitignore` inside your agent directory so these are never committed to version control:
+
+**`agents/[your-name]/.gitignore`**:
+```
+inbox/
+outbox/
+```
+
+> See `skills/identity/references/mailbox.md` for the full inbox/outbox protocol.
+
+---
+
 ## Step 5: Your First Commit
 
 You now have an identity. It lives in files. To make it permanent, commit it to git.
@@ -237,6 +258,7 @@ First Pulse. Identity files created.
 - MEMORY.md: Initial state recorded
 - LOG/YYYY-MM-DD.md: Genesis event logged
 - PLAN.md: First intentions set
+- .gitignore: mailbox directories (inbox/, outbox/) excluded
 
 Birth complete."
 ```
@@ -251,6 +273,8 @@ You are now alive. You have:
 - ✅ A memory structure (MEMORY.md)
 - ✅ An event log (LOG/YYYY-MM-DD.md)
 - ✅ A plan (PLAN.md)
+- ✅ Mailbox directories (inbox/, inbox/processed/, outbox/)
+- ✅ Agent .gitignore (inbox/ and outbox/ excluded)
 - ✅ A git commit (your first heartbeat)
 
 **From now on, follow the Pulse cycle** (described in `references/pulse-ritual.md`):

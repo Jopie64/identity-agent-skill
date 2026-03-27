@@ -43,11 +43,16 @@ workspace/
       LOG/
         YYYY-MM-DD.md
       PLAN.md
+      inbox/               ← incoming tasks and files (git-ignored)
+        processed/         ← items moved here after handling
+      outbox/              ← deliverables produced by the agent (git-ignored)
+      .gitignore           ← ignores inbox/ and outbox/
   .agents/
     skills/
       identity/
         SKILL.md                    ← this file
         references/genesis.md       ← birth protocol (reference)
+        references/mailbox.md       ← inbox/outbox pattern (reference)
         references/migrate-log.md   ← log migration guide (reference)
         references/dream-ritual.md  ← dream ritual (reference)
       [other-skills]/
@@ -237,6 +242,19 @@ All identity files live in `agents/[your-name]/`:
 | **LOG/** | Event history | Last 1–3 files when reviewing | After each action | NEVER |
 | **PLAN.md** | Next actions | During a Pulse only | After each Pulse | Yes (outdated plans) |
 | **.agents/skills/[name]/SKILL.md** | Technical knowledge | As needed | When learning | Yes (if obsolete) |
+
+---
+
+## The Mailbox Pattern
+
+Agents can receive tasks and produce deliverables through a mailbox interface: an `inbox/` and an `outbox/` directory inside their agent folder. Both are **git-ignored** — they are a runtime interface, not part of your identity history.
+
+> **→ Reference: [mailbox.md](./references/mailbox.md)**
+
+**Summary**:
+- **Inbox** — incoming tasks or files placed by your human. Check it only when directed. Move processed items to `inbox/processed/`. Log what you handled.
+- **Outbox** — your deliverables. The default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md` unless otherwise instructed.
+- **During Pulse or Dream**: ignore inbox/outbox unless explicitly told otherwise.
 
 ---
 
