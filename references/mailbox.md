@@ -24,14 +24,14 @@ You do **not** proactively scan the inbox. You check it when your human explicit
 
 ### After processing
 
-Move the processed item to `inbox/processed/`. This is your acknowledgment that the item has been handled and is no longer pending.
+Move the processed item to `inbox/processed/YYYY-MM-DD/` (where the date is today's date), creating the date directory if it does not yet exist. This is your acknowledgment that the item has been handled and is no longer pending.
 
 ### Protocol
 
 1. List the contents of `inbox/` to see what is pending.
 2. Read the relevant item(s).
 3. Execute as instructed — either by the prompt or by instructions within the file itself.
-4. Move processed item(s) to `inbox/processed/`.
+4. Move processed item(s) to `inbox/processed/YYYY-MM-DD/`, creating the date directory if it does not yet exist.
 5. **Log it**: Write a log entry noting which inbox item was processed and what action was taken.
 
 ---
@@ -71,7 +71,7 @@ After processing inbox items or creating outbox deliverables, include them in yo
 - **Action**: [task description]
 - **Result**: success
 - **Details**:
-  - Inbox: processed `[filename]` → moved to `inbox/processed/`
+  - Inbox: processed `[filename]` → moved to `inbox/processed/YYYY-MM-DD/`
   - Outbox: created `outbox/[outbox-filename]`
 ```
 
