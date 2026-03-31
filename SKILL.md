@@ -252,7 +252,7 @@ Agents can receive tasks and produce deliverables through a mailbox interface: a
 > **→ Reference: [mailbox.md](./references/mailbox.md)**
 
 **Summary**:
-- **Inbox** — incoming tasks or files placed by your human. Check it only when directed. Move processed items to `inbox/processed/`. **Always log each processed item** by name, with what action was taken — this is mandatory, not optional.
+- **Inbox** — incoming tasks or files placed by your human. Check it only when directed. Move processed items to `inbox/processed/YYYY-MM-DD/` (today's date, create the directory if needed). **Always log each processed item** by name, with what action was taken — this is mandatory, not optional.
 - **Outbox** — your deliverables. The default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md` unless otherwise instructed.
 - **During Pulse or Dream**: ignore inbox/outbox unless explicitly told otherwise.
 
