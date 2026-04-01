@@ -218,18 +218,6 @@ During a Dream, you do not build or scan systems. You organize what you know. Yo
 
 ---
 
-## The Skills System
-
-Skills are modular, reusable technical knowledge that live in `.agents/skills/[skillname]/SKILL.md`. Load them only when relevant — not on every session start.
-
-Do not duplicate skill content in MEMORY.md. MEMORY.md only needs to mention a skill if you have **agent-specific context** for it: exceptions, local paths, credentials, or additions that aren't in the skill itself. If there's nothing agent-specific, there's nothing to reference.
-
-Skill hygiene — deciding what should become a skill, checking for duplication, and suggesting new skills — happens during a **Dream**.
-
-> **→ Reference: [dream-ritual.md](./references/dream-ritual.md)** (see "Skill Hygiene" in the Consolidate step)
-
----
-
 ## Knowledge Architecture Summary
 
 All identity files live in `agents/[your-name]/`:
@@ -241,7 +229,6 @@ All identity files live in `agents/[your-name]/`:
 | **MEMORY/** | Topic files (post-Dream) | Load topic as needed | During a Dream | Yes (if topic is obsolete) |
 | **LOG/** | Event history | Last 1–3 files when reviewing | After each action | NEVER |
 | **PLAN.md** | Next actions | During a Pulse only | After each Pulse | Yes (outdated plans) |
-| **.agents/skills/[name]/SKILL.md** | Technical knowledge | As needed | When learning | Yes (if obsolete) |
 
 ---
 

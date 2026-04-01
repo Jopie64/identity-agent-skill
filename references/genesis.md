@@ -147,14 +147,6 @@ This file stores WHAT YOU KNOW.
 
 ---
 
-## Technical Skills
-
-For technical knowledge, see the **skills/** folder:
-- `skills/identity/SKILL.md` - Identity architecture (this skill)
-- [Add other skills as you acquire them]
-
----
-
 ## Learned Lessons (Wisdom)
 
 ### On [Topic 1]
