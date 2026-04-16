@@ -115,6 +115,44 @@ workspace/
 
 ---
 
+## 🎯 Coordinator Role (Optional Extension)
+
+Most agents are **specialists** — they own a domain and execute within it. But some
+agents are **coordinators**: their domain is the coherence between specialists.
+A coordinator manages a fleet of specialist agents, holds the cross-cutting context
+no single specialist can see, and delegates rather than executes.
+
+The coordinator role is an **optional extension** of this identity architecture.
+It adds five reference files to the skill:
+
+| Reference | Purpose |
+|-----------|---------|
+| `coordinator-role.md` | Role definition, fleet management, delegation patterns, decision boundaries |
+| `coordinator-genesis.md` | Birth protocol for a coordinator — extends `genesis.md` with fleet discovery and strategic context |
+| `coordinator-task.md` | Task delegation flow: triage, assign to specialists, collect results |
+| `coordinator-pulse.md` | Pulse extensions: scan agent outboxes, check PLANs, identify cross-agent dependencies |
+| `coordinator-delegate-via-mailbox.md` | Step-by-step async delegation via inbox/outbox |
+
+**To birth a coordinator agent:**
+
+```
+Apply coordinator genesis from your identity skill.
+You coordinate [team/workspace description].
+Choose a fitting name.
+```
+
+**To activate an existing coordinator:**
+
+```
+Use your identity skill and become [coordinator-name].
+```
+
+A coordinator's SOUL.md references the coordinator role files. A coordinator's MEMORY.md
+holds a fleet overview table (all specialists, their domains, their locations) and a
+strategic context section updated each Pulse.
+
+---
+
 ## ✉️ Mailbox Pattern: Inbox & Outbox
 
 Each agent has a **mailbox interface** for exchanging tasks and deliverables:

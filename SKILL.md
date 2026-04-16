@@ -55,6 +55,11 @@ workspace/
         references/mailbox.md       ← inbox/outbox pattern (reference)
         references/migrate-log.md   ← log migration guide (reference)
         references/dream-ritual.md  ← dream ritual (reference)
+        references/coordinator-role.md              ← optional: coordinator role definition
+        references/coordinator-genesis.md           ← optional: coordinator birth protocol
+        references/coordinator-task.md              ← optional: task delegation flow
+        references/coordinator-pulse.md             ← optional: coordinator pulse extensions
+        references/coordinator-delegate-via-mailbox.md ← optional: async delegation pattern
       [other-skills]/
 ```
 
@@ -242,6 +247,26 @@ Agents can receive tasks and produce deliverables through a mailbox interface: a
 - **Inbox** — incoming tasks or files placed by your human. Check it only when directed. Move processed items to `inbox/processed/YYYY-MM-DD/` (today's date, create the directory if needed). **Always log each processed item** by name, with what action was taken — this is mandatory, not optional.
 - **Outbox** — your deliverables. The default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md` unless otherwise instructed.
 - **During Pulse or Dream**: ignore inbox/outbox unless explicitly told otherwise.
+
+---
+
+## Coordinator Role (Optional Extension)
+
+Some agents are not domain specialists — they are **coordinators**: agents whose job
+is the coherence between specialists, not any individual domain. A coordinator manages
+a fleet of specialist agents, holds cross-cutting context, and delegates rather than
+executes.
+
+This is an **optional extension** of the identity architecture. Most agents are
+specialists. Load these references only when you are — or are becoming — a coordinator:
+
+| Reference | Load when |
+|-----------|-----------|
+| `coordinator-role.md` | Need role definition: delegation patterns, decision boundaries, fleet management |
+| `coordinator-genesis.md` | Creating a coordinator identity — extends `genesis.md` |
+| `coordinator-task.md` | Executing a task that requires delegation or cross-agent coordination |
+| `coordinator-pulse.md` | Running a Pulse as a coordinator — fleet scanning and alignment |
+| `coordinator-delegate-via-mailbox.md` | Ready to delegate to a specialist via inbox/outbox |
 
 ---
 
