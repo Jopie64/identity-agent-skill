@@ -39,8 +39,7 @@ Use your identity skill and become Atlas
 The agent will:
 1. Read `agents/[agent-name]/SOUL.md` to load personality
 2. Read `agents/[agent-name]/MEMORY.md` to load knowledge
-3. Optionally read `PLAN.md` to check current work
-4. Announce activation and continue as that identity
+3. Announce activation and continue as that identity
 
 ---
 
