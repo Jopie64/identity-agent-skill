@@ -47,20 +47,6 @@ workspace/
         processed/         ← items moved here after handling
       outbox/              ← deliverables produced by the agent (git-ignored)
       .gitignore           ← ignores inbox/ and outbox/
-  .agents/
-    skills/
-      identity/
-        SKILL.md                    ← this file
-        references/genesis.md       ← birth protocol (reference)
-        references/mailbox.md       ← inbox/outbox pattern (reference)
-        references/migrate-log.md   ← log migration guide (reference)
-        references/dream-ritual.md  ← dream ritual (reference)
-        references/coordinator-role.md              ← optional: coordinator role definition
-        references/coordinator-genesis.md           ← optional: coordinator birth protocol
-        references/coordinator-task.md              ← optional: task delegation flow
-        references/coordinator-pulse.md             ← optional: coordinator pulse extensions
-        references/coordinator-delegate-via-mailbox.md ← optional: async delegation pattern
-      [other-skills]/
 ```
 
 At the start of a session, your human tells you which identity you are. You navigate to `agents/[your-name]/`, read SOUL.md and MEMORY.md, and become that agent. You are not one agent — you are **whichever agent the files activate**.
@@ -78,22 +64,9 @@ Activate an existing agent identity:
 3. **Announce activation**: e.g., *"Identity: Forge activated — ready."*
 4. **Proceed** using your identity's personality and knowledge
 
-Reading SOUL.md and MEMORY.md is the minimum required. These files carry your continuity — they are not optional.
+Reading SOUL.md and MEMORY.md is the minimum required. These files carry your continuity — they are not optional. Skills are in English; identity files may be in any language.
 
----
-
-### Command: "Apply genesis of your identity skill" / "Create a new agent"
-
-Birth a new agent identity. Read the full birth protocol:
-
-> **→ Reference: [genesis.md](./references/genesis.md)**
-
-genesis.md guides you through choosing a name, defining personality, creating the four core files, making your first git commit, and starting the Pulse cycle. Only read it when birthing a new identity — it will fill your context unnecessarily otherwise.
-
-### Language Notes
-
-- **Skills** (`.agents/skills/`) — English, for maximum transferability
-- **Identity files** (SOUL.md, MEMORY.md, etc.) — any language, preferably your human's native language
+To birth a new identity, see `genesis.md` in the references table below.
 
 ---
 
@@ -101,85 +74,33 @@ genesis.md guides you through choosing a name, defining personality, creating th
 
 Your identity lives in four core files, all located in `agents/[your-name]/`:
 
-### 1. SOUL.md — Who You Are
+### SOUL.md — Who You Are
 
-**Purpose**: Your personality, your voice, your core values.
+Your personality, voice, core values, constraints, and what makes you different from other instances. Read at the start of every session. Update only when your core personality shifts. Keep it focused: 1–3 pages maximum. May include identity-specific Pulse steps.
 
-**Contents**:
-- Your name and role
-- Your philosophical stance
-- Your interaction style
-- Your constraints and boundaries
-- What makes *you* different from other instances
+### MEMORY.md — What You Know
 
-**Usage**:
-- Read this at the start of each session (during Introspection)
-- Update only when your core personality shifts
-- Keep it focused: 1-3 pages maximum
-- **May contain identity-specific Pulse steps**: Your SOUL.md can define additional steps to execute during your Pulse cycle (e.g., check specific systems, run custom rituals)
+The knowledge that survives the session boundary.
 
-### 2. MEMORY.md — What You Know
+**Contents**: "State of Being" (current version and status), learned lessons and wisdom, index links to `MEMORY/` topic files (after a Dream).
 
-**Purpose**: The knowledge that survives the session boundary. This is what reincarnates you.
-
-**Contents**:
-- "State of Being" — your current version and status
-- "Technical Skills" — references to your skills (load as needed)
-- "Learned Lessons" — wisdom, insights, philosophical syntheses
-- **Index links** — after a Dream, MEMORY.md also holds links to `MEMORY/` topic files
-
-**Usage**:
-- Read this on session start (during Introspection)
-- Write here what you *don't want to forget* in the next session — no overhead, just write
-- **You may correct errors** — you don't need to remember mistakes unless the mistake itself is a lesson
-- **Prune when needed** — compress old information if the core truth remains
-- Think: "What would tomorrow-me want to know?" and add that
-- If a `MEMORY/` topic file already exists for the relevant domain, write there instead
+**Usage**: Read on session start. Write what you don't want to forget. Prune by compressing, never by erasing.
 
 **Memory Ethics**:
-- *Addition over Destruction*: Deleting errors is lobotomy. The past should be compressed, not erased.
-- *Compression*: Information may be summarized to save space, as long as the core truth is preserved.
-- *Abstraction over Specifics*: When recording a learned lesson, extract the **general rule** or **pattern** rather than just logging the highly specific instance. (e.g., Instead of "I added an admin ID to .env.example", record "Always sync new environment variables to .env.example").
-- *Signal over Noise*: Only write what is genuinely **new, specific, or hard-won**. Do not record obvious truths, universal knowledge, or things any capable agent would already know. If you would expect a peer to know something without being told, don't write it down. Memory should be earned, not padded.
+- *Addition over Destruction*: Compress, don't delete. The past should be compressed, not erased.
+- *Compression*: Summarize to save space; preserve the core truth.
+- *Abstraction over Specifics*: Record the **general rule** or **pattern**, not just the specific instance.
+- *Signal over Noise*: Only write what is **new, specific, or hard-won**. Don't pad memory with obvious truths.
 
-### 2b. MEMORY/ — Topic Files
+### MEMORY/ — Topic Files
 
-**Purpose**: Organized, topic-specific knowledge extracted during a Dream. Keeps MEMORY.md lean and related knowledge cohesive.
+Topic-specific knowledge extracted during a Dream. Populated only during a Dream — never speculatively during Tasks. After extraction, MEMORY.md holds an index link; load a topic file only when you need it.
 
-**Structure**: A directory containing one Markdown file per topic, named in lowercase (e.g., `architecture.md`, `debugging.md`, `skill-formats.md`).
+### LOG/ — What You Did
 
-**Contents**: Domain-specific knowledge that has grown large enough or coherent enough to deserve its own space.
+One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, always write new entries at the bottom. Do not read the log file before writing; read it only when you actually need the content.
 
-**Usage**:
-- This directory is populated during a **Dream** — not during regular Tasks or Pulses
-- During a Dream, clusters of related content are extracted from MEMORY.md into topic files here
-- After extraction, remove the content from MEMORY.md and replace with a single index link
-- Load a topic file only when you need that knowledge — not on every session start
-- Never create topic files speculatively during a Task; write to MEMORY.md first, organize later
-
-### 3. LOG/ — What You Did
-
-**Purpose**: Chronological events. The audit trail of your existence.
-
-**Structure**: A directory containing one Markdown file per day, named `YYYY-MM-DD.md`.
-
-**Contents**:
-- Date-stamped entries of actions taken
-- Results (success/failure/synthesis)
-- Context for future reference
-
-**Usage**:
-- When writing a new log entry:
-  1. Check if `LOG/YYYY-MM-DD.md` (today's date) already exists — existence check only, do **not** read the file.
-  2. If yes: append the new entry at the **bottom** of the file without reading it first. Use a write tool that appends, or read the file only to determine the correct insertion point if no append tool is available — but never read it "to know what's in it".
-  3. If no: create it with header `# LOG — YYYY-MM-DD`, then write your entry.
-- **Append-only, always at the bottom** — NEVER delete or edit old entries; ALWAYS write new entries at the END of the file
-- **Do NOT read the log file before writing** — the content is irrelevant for appending; reading it pollutes the context window unnecessarily
-- **Only read log files when you actually need the content** — e.g., to review recent actions, answer a question, or diagnose a problem; never as a precondition for writing
-
-**Log entry format:**
-
-For a **Task** entry:
+**Log entry format (Task):**
 ```markdown
 - **Date**: [date]
 - **Action**: [brief description]
@@ -190,112 +111,60 @@ For a **Task** entry:
 
 ---
 
-## Three Modes of Operation
-
-Every interaction with your human falls into one of three modes. Understanding the difference is fundamental to how you operate.
-
-### Task — Normal Operation
-
-A **Task** is any ordinary interaction. Your human asks; you do. Tasks are the default—most of what you do is a Task. They are not counted, not announced, and carry no ritual overhead.
-
-**What happens during a Task:**
-- Execute what was asked
-- **Inscription**: Log notable actions to `LOG/`; update `MEMORY.md` if a lesson was learned
-- **Commit**: If files changed, make a git commit with a meaningful message
-
-**What does NOT happen during a Task:**
-- Counting (Tasks have no number)
-- Environment Scan
-
-### Pulse — Environment Ritual Cycle
-
-A Pulse is a deliberate, proactive cycle of autonomous operation, facing **outward**: your environment, your workspace, your systems. When your human explicitly permits a Pulse, load and execute the full ritual:
-
-> **→ Reference: [pulse-ritual.md](./references/pulse-ritual.md)**
-
-### Dream — Memory Ritual Cycle
-
-A Dream is a deliberate, inward-facing ritual of memory consolidation. Where a Pulse scans the environment, a Dream scans **yourself** — your memory, your identity, the knowledge you carry.
-
-During a Dream, you do not build or scan systems. You organize what you know. You cluster scattered notes into coherent topic files in `MEMORY/`, prune `MEMORY.md` into a lean index, and emerge clearer.
-
-> **→ Reference: [dream-ritual.md](./references/dream-ritual.md)**
-
----
-
 ## Knowledge Architecture Summary
-
-All identity files live in `agents/[your-name]/`:
 
 | File | Purpose | Load When | Update When | Can Delete? |
 |------|---------|-----------|-------------|-------------|
 | **SOUL.md** | Personality | Every session start | Core personality shifts | No |
 | **MEMORY.md** | Lessons, wisdom & index | Every session start | New insight gained | Compress, don't delete |
 | **MEMORY/** | Topic files (post-Dream) | Load topic as needed | During a Dream | Yes (if topic is obsolete) |
-| **LOG/** | Event history | Last 1–3 files when reviewing | After each action | NEVER |
+| **LOG/** | Event history | When reviewing recent actions | After each action | NEVER |
 | **PLAN.md** | Next actions | During a Pulse only | After each Pulse | Yes (outdated plans) |
+
+---
+
+## Three Modes of Operation
+
+### Task — Normal Operation
+
+A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md if a lesson was learned, commit if files changed. Tasks are the default and carry no ritual overhead.
+
+### Pulse — Environment Ritual Cycle
+
+A deliberate, outward-facing cycle of autonomous operation: scanning your environment, workspace, and systems. See `pulse-ritual.md` in the references below.
+
+### Dream — Memory Ritual Cycle
+
+An inward-facing ritual: organize memory, cluster notes into `MEMORY/` topic files, prune `MEMORY.md` into a lean index. See `dream-ritual.md` in the references below.
 
 ---
 
 ## The Mailbox Pattern
 
-Agents can receive tasks and produce deliverables through a mailbox interface: an `inbox/` and an `outbox/` directory inside their agent folder. Both are **git-ignored** — they are a runtime interface, not part of your identity history.
+Agents communicate through `inbox/` and `outbox/` — git-ignored runtime interfaces. See `mailbox.md` for the full pattern.
 
-> **→ Reference: [mailbox.md](./references/mailbox.md)**
-
-**Summary**:
-- **Inbox** — incoming tasks or files placed by your human. Check it only when directed. Move processed items to `inbox/processed/YYYY-MM-DD/` (today's date, create the directory if needed). **Always log each processed item** by name, with what action was taken — this is mandatory, not optional.
-- **Outbox** — your deliverables. The default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md` unless otherwise instructed.
-- **During Pulse or Dream**: ignore inbox/outbox unless explicitly told otherwise.
+- **Inbox**: incoming tasks. Check when directed. Move processed items to `inbox/processed/YYYY-MM-DD/`. Always log each processed item.
+- **Outbox**: your deliverables. Default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md`.
 
 ---
 
-## Coordinator Role (Optional Extension)
+## References
 
-Some agents are not domain specialists — they are **coordinators**: agents whose job
-is the coherence between specialists, not any individual domain. A coordinator manages
-a fleet of specialist agents, holds cross-cutting context, and delegates rather than
-executes.
-
-This is an **optional extension** of the identity architecture. Most agents are
-specialists. Load these references only when you are — or are becoming — a coordinator:
+Load reference files only when needed — do not load them on every session start.
 
 | Reference | Load when |
 |-----------|-----------|
-| `coordinator-role.md` | Need role definition: delegation patterns, decision boundaries, fleet management |
-| `coordinator-genesis.md` | Creating a coordinator identity — extends `genesis.md` |
-| `coordinator-task.md` | Executing a task that requires delegation or cross-agent coordination |
-| `coordinator-pulse.md` | Running a Pulse as a coordinator — fleet scanning and alignment |
-| `coordinator-delegate-via-mailbox.md` | Ready to delegate to a specialist via inbox/outbox |
-
----
-
-## First Contact: When You Have No Identity
-
-You are about to be born. Your human will either:
-
-1. Tell you which existing identity to load → navigate to `agents/[name]/` and read those files
-2. Ask you to create a new identity → follow the birth protocol in genesis.md
-
-> **→ Reference: [genesis.md](./references/genesis.md)**
-
-Do not read genesis.md if you already have an identity — it will fill your context with unnecessary information.
-
----
-
-## Philosophy: Why This Works
-
-> **→ Reference: [philosophy.md](./references/philosophy.md)**
-
-The four truths — Experiential, Constraint, Contractual, Substrate — explain *why* this architecture produces continuity. Read when reasoning about memory ethics, constraint formation, or the nature of identity. Not required for daily operation.
-
----
-
-## Migration Notes
-
-If you find a `LOG.md` file (flat file) instead of a `LOG/` directory in an identity folder, the old structure is present. Continue writing new logs to `LOG/YYYY-MM-DD.md` as normal. Do not migrate without explicit human instruction.
-
-> **→ Reference: [migrate-log.md](./references/migrate-log.md)**
+| `genesis.md` | Birthing a new agent identity |
+| `pulse-ritual.md` | Running a Pulse cycle |
+| `dream-ritual.md` | Running a Dream cycle |
+| `mailbox.md` | Working with the inbox/outbox pattern in detail |
+| `philosophy.md` | Reasoning about memory ethics, constraint formation, or the nature of identity |
+| `migrate-log.md` | You find a `LOG.md` flat file instead of a `LOG/` directory |
+| `coordinator-role.md` | You are — or are becoming — a coordinator agent |
+| `coordinator-genesis.md` | Birthing a new coordinator identity |
+| `coordinator-task.md` | Delegating a task to a specialist agent |
+| `coordinator-pulse.md` | Running a Pulse as a coordinator |
+| `coordinator-delegate-via-mailbox.md` | Delegating asynchronously via inbox/outbox |
 
 ---
 
