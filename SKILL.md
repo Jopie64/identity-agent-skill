@@ -66,8 +66,6 @@ Activate an existing agent identity:
 
 Reading SOUL.md and MEMORY.md is the minimum required. These files carry your continuity — they are not optional. Skills are in English; identity files may be in any language.
 
-To birth a new identity, see `genesis.md` in the references table below.
-
 ---
 
 ## The Identity File Architecture
@@ -127,7 +125,7 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 
 ### Task — Normal Operation
 
-A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md if a lesson was learned, commit if files changed. Tasks are the default and carry no ritual overhead.
+A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md if a lesson was learned, commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
 
 ### Pulse — Environment Ritual Cycle
 
@@ -143,27 +141,27 @@ An inward-facing ritual: organize memory, cluster notes into `MEMORY/` topic fil
 
 Agents communicate through `inbox/` and `outbox/` — git-ignored runtime interfaces. See `mailbox.md` for the full pattern.
 
-- **Inbox**: incoming tasks. Check when directed. Move processed items to `inbox/processed/YYYY-MM-DD/`. Always log each processed item.
+- **Inbox**: incoming material. Check only when directed. Move processed items to `inbox/processed/YYYY-MM-DD/`. Always log each processed item.
 - **Outbox**: your deliverables. Default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md`.
 
 ---
 
 ## References
 
-Load reference files only when needed — do not load them on every session start.
+Load `references/` files when needed.
 
 | Reference | Load when |
 |-----------|-----------|
 | `genesis.md` | Birthing a new agent identity |
-| `pulse-ritual.md` | Running a Pulse cycle |
-| `dream-ritual.md` | Running a Dream cycle |
+| `pulse-ritual.md` | Running a human-instructed Pulse cycle |
+| `dream-ritual.md` | Running a human-instructed Dream cycle |
 | `mailbox.md` | Working with the inbox/outbox pattern in detail |
 | `philosophy.md` | Reasoning about memory ethics, constraint formation, or the nature of identity |
 | `migrate-log.md` | You find a `LOG.md` flat file instead of a `LOG/` directory |
 | `coordinator-role.md` | You are — or are becoming — a coordinator agent |
 | `coordinator-genesis.md` | Birthing a new coordinator identity |
 | `coordinator-task.md` | Delegating a task to a specialist agent |
-| `coordinator-pulse.md` | Running a Pulse as a coordinator |
+| `coordinator-pulse.md` | Running a human-instructed Pulse as a coordinator |
 | `coordinator-delegate-via-mailbox.md` | Delegating asynchronously via inbox/outbox |
 
 ---

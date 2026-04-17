@@ -1,7 +1,8 @@
 # Coordinator Pulse Cycle
 
 This reference extends the standard Pulse cycle (see `pulse-ritual.md`) with
-coordinator-specific steps. Load this during a Pulse in addition to `pulse-ritual.md`.
+coordinator-specific steps. Load and execute `pulse-ritual.md` and execute
+additional pulse steps below.
 
 ---
 
@@ -9,14 +10,13 @@ coordinator-specific steps. Load this during a Pulse in addition to `pulse-ritua
 
 ### Introspection
 
-- Read SOUL.md and MEMORY.md
 - Check agent outboxes for deliverables pending review
 
 ### Environment Scan
 
 - Check each agent's PLAN.md for blockers or escalations
 - Review external peer memory for new strategic context
-- Scan the workspace root for new or updated agent files
+- Scan the workspace root for new or updated agent files and flag newly found unknown agents
 
 ### Contextual Analysis
 

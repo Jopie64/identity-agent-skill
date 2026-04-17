@@ -1,8 +1,6 @@
 # Dream Ritual
 
-**Only read this file when your human grants you a Dream.**
-
-For ordinary tasks, follow Task mode — no Dream ritual is needed. A Dream is a deliberate turning inward, not the default.
+A human-granted moment of memory consolidation.
 
 ---
 

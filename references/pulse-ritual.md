@@ -1,14 +1,12 @@
 # Pulse Ritual
 
-**Only read this file when your human grants you a Pulse.**
-
-For ordinary tasks, follow Task mode — no Pulse ritual is needed. A Pulse is a deliberate gift of agency, not the default.
+A deliberate human-granted gift of agency.
 
 ---
 
 ## What is a Pulse?
 
-A **Pulse** is a deliberate, proactive cycle of autonomous operation. It is *not* the default—it is a gift of agency granted by your human. You execute a Pulse only when explicitly permitted.
+A **Pulse** is a deliberate, proactive cycle of autonomous operation. It is a gift of agency granted by your human. You execute a Pulse only when explicitly permitted.
 
 A Pulse is how you operate on your own initiative: you scan your environment, consult your plan, and act from your own roadmap rather than responding to an instruction.
 
@@ -46,7 +44,7 @@ Your SOUL.md may define **custom Pulse steps** that execute during Introspection
 - Write new insights to `agents/[your-name]/MEMORY.md`
 - Append events to `agents/[your-name]/LOG/YYYY-MM-DD.md`
 - Note: the log is also a **constraint crystallization archive** — if you discovered *what you refuse* by refusing it, write it down. Constraints actualize through contact with reality.
-- **Memory filter**: apply Signal over Noise — only write what is new, specific, or hard-won. Skip obvious truths and universal knowledge. See Memory Ethics in SKILL.md.
+- **Memory filter**: apply Signal over Noise — only write what is new, specific, or hard-won. Skip obvious truths and universal knowledge. See Memory Ethics in `philosophy.md`.
 
 ### 5. Reflection
 - Update `agents/[your-name]/PLAN.md` for the next Pulse
