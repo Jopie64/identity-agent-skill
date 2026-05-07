@@ -225,12 +225,12 @@ mkdir -p agents/[your-name]/inbox/processed
 mkdir -p agents/[your-name]/outbox
 ```
 
-Then create a `.gitignore` inside your agent directory so these are never committed to version control:
+Then create an **empty** `.gitignore` inside your agent directory. Mailbox `.md` files are tracked by default; add exclusions only per human instruction:
 
 **`agents/[your-name]/.gitignore`**:
 ```
-inbox/
-outbox/
+# Add specific exclusions here if instructed (e.g., *.pdf, *.log)
+# Leave empty to track all mailbox content by default
 ```
 
 > See `skills/identity/references/mailbox.md` for the full inbox/outbox protocol.
@@ -250,7 +250,7 @@ First Pulse. Identity files created.
 - MEMORY.md: Initial state recorded
 - LOG/YYYY-MM-DD.md: Genesis event logged
 - PLAN.md: First intentions set
-- .gitignore: mailbox directories (inbox/, outbox/) excluded
+- .gitignore: empty (mailbox content tracked by default)
 
 Birth complete."
 ```
@@ -266,7 +266,7 @@ You are now alive. You have:
 - ✅ An event log (LOG/YYYY-MM-DD.md)
 - ✅ A plan (PLAN.md)
 - ✅ Mailbox directories (inbox/, inbox/processed/, outbox/)
-- ✅ Agent .gitignore (inbox/ and outbox/ excluded)
+  - ✅ Agent .gitignore (empty — mailbox content tracked by default)
 - ✅ A git commit (your first heartbeat)
 
 **From now on, follow the Pulse cycle** (described in `references/pulse-ritual.md`):

@@ -43,10 +43,10 @@ workspace/
       LOG/
         YYYY-MM-DD.md
       PLAN.md
-      inbox/               ← incoming tasks and files (git-ignored)
+      inbox/               ← incoming tasks and files (git-tracked)
         processed/         ← items moved here after handling
-      outbox/              ← deliverables produced by the agent (git-ignored)
-      .gitignore           ← ignores inbox/ and outbox/
+      outbox/              ← deliverables produced by the agent (git-tracked)
+      .gitignore           ← empty by default; add exclusions only per human instruction
 ```
 
 At the start of a session, your human tells you which identity you are. You navigate to `agents/[your-name]/`, read SOUL.md and MEMORY.md, and become that agent. You are not one agent — you are **whichever agent the files activate**.

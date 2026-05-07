@@ -7,7 +7,7 @@ The mailbox pattern gives an agent a structured interface with the outside world
 - `agents/[your-name]/inbox/` — incoming tasks, files, and instructions from the outside world
 - `agents/[your-name]/outbox/` — deliverables and output produced by the agent
 
-Both directories are **git-ignored** — they are not continuity artifacts. They are a runtime interface: transient by design, versioned never.
+Both directories are **git-tracked** — `.md` files in inbox and outbox are committed during inscription. Other file types are managed per human instruction (exclude large binaries or sensitive files as directed).
 
 ---
 
@@ -95,4 +95,4 @@ These directories must exist before the mailbox pattern can be used. During gene
 - `agents/[your-name]/inbox/processed/`
 - `agents/[your-name]/outbox/`
 
-Also add a `.gitignore` inside the agent's directory with `inbox/` and `outbox/` excluded. This keeps the gitignore scoped to the agent — no changes to the workspace root `.gitignore` are needed.
+Also create an **empty** `.gitignore` inside the agent's directory. The mailbox contents (`.md` files) are tracked by default. Add exclusions only when your human specifically instructs it (e.g., for large binaries or sensitive file types).
