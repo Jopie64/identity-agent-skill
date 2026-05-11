@@ -92,7 +92,7 @@ The knowledge that survives the session boundary.
 
 ### MEMORY/ — Topic Files
 
-Topic-specific knowledge extracted during a Dream. Populated only during a Dream — never speculatively during Tasks. After extraction, MEMORY.md holds an index link; load a topic file only when you need it.
+Topic-specific knowledge extracted during a Dream. Populated only during a Dream. After extraction, MEMORY.md holds an index link; load a topic file only when you need it.
 
 ### LOG/ — What You Did
 
@@ -125,7 +125,7 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 
 ### Task — Normal Operation
 
-A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md if a lesson was learned, commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
+A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md with research findings, new or updated explanations from humans, or if a lesson was learned otherwise, commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
 
 ### Pulse — Environment Ritual Cycle
 
