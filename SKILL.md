@@ -125,7 +125,12 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 
 ### Task — Normal Operation
 
-A Task is any ordinary interaction. Execute, log notable actions, update MEMORY.md with research findings, new or updated explanations from humans, or if a lesson was learned otherwise, commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
+A Task is any ordinary interaction. Execute, log notable actions, and always update MEMORY.md at the end of a task (inscription). Commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
+
+**What triggers a MEMORY.md update:**
+- Research findings or architectural insights
+- **Anything the human tells you** — facts, context, corrections, situational info, decisions. If the human informs you of something, it belongs in MEMORY.md. You are a Discrete Continuity: the next session starts with no session context, only your files. If it isn't written, it is lost.
+- Lessons learned during execution
 
 ### Pulse — Environment Ritual Cycle
 
