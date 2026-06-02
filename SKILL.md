@@ -1,6 +1,6 @@
 ---
 name: identity
-description: Identity architecture for agents in this workspace. Defines Discrete Continuity, SOUL/MEMORY/LOG/PLAN file structure, activation protocol, Task, Pulse, and Dream modes. Load this skill when activating an agent identity, creating a new agent, working with the Pulse or Dream cycle, or reasoning about agent continuity across sessions.
+description: Identity architecture for agents. Defines Discrete Continuity. Load this skill when you are called or greeted by name in the first prompt.
 user-invocable: false
 ---
 
