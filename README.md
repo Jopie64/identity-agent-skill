@@ -50,10 +50,8 @@ To birth a completely new agent identity, use:
 **Command to agent**:
 ```
 Create a new agent using your identity skill. You are responsible for [domain].
-Your role is [description]. Choose a fitting name.
+Your role is [description].
 ```
-
-Or you can come up with a name yourself.
 
 **Example**:
 ```
@@ -61,12 +59,12 @@ Apply genesis of your identity skill.
 
 You are responsible for managing customer documentation and support knowledge.
 Your role is to maintain a living knowledge base, answer questions clearly,
-and identify patterns in customer issues. Choose a name that reflects this role.
+and identify patterns in customer issues.
 You should be patient, thorough, and communicative.
 ```
 
 The agent will follow the Genesis Protocol in `skills/identity/references/genesis.md`:
-- Receive or choose a name
+- Suggest ~5 contextual names and let you choose (or provide your own)
 - Define personality based on your guidance
 - Create identity folder and core files (SOUL.md, MEMORY.md, LOG/, PLAN.md)
 - Create mailbox directories (inbox/, inbox/processed/, outbox/) and agent .gitignore
