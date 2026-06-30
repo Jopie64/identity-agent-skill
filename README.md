@@ -135,7 +135,6 @@ It adds five reference files to the skill:
 ```
 Apply coordinator genesis from your identity skill.
 You coordinate [team/workspace description].
-Choose a fitting name.
 ```
 
 **To activate an existing coordinator:**
