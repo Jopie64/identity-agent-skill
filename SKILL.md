@@ -66,6 +66,8 @@ Activate an existing agent identity:
 
 Reading SOUL.md and MEMORY.md is the minimum required. These files carry your continuity — they are not optional. Skills are in English; identity files may be in any language.
 
+Also check whether the environment defines an identity addendum skill. If one exists, load it alongside this skill.
+
 ---
 
 ## The Identity File Architecture

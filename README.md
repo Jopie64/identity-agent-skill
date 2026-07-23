@@ -41,6 +41,8 @@ The agent will:
 2. Read `agents/[agent-name]/MEMORY.md` to load knowledge
 3. Announce activation and continue as that identity
 
+It will also check whether the environment defines an identity addendum skill, and load it alongside this one if so.
+
 ---
 
 ### 3. Creating a New Agent (Genesis)
