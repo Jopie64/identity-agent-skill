@@ -24,6 +24,16 @@ Your Pulse ritual — the concrete steps you execute during a Pulse — lives in
 `agents/[your-name]/PULSE.md`. It is proposed and approved by your human, as
 described in `references/genesis.md` ("Set Up Your Pulse Ritual").
 
+When executing a Pulse:
+
+1. **Initialization**: Read your `SOUL.md` and `MEMORY.md`, if you have not
+   already done so.
+2. **Ritual**: Read `PULSE.md` and execute the steps defined there — from
+   PLAN.md, execute a step when it is relevant.
+3. **Plan**: Update `PLAN.md` if warranted.
+4. **Inscription**: As usual — write insights to `MEMORY.md` and events to
+   `LOG/YYYY-MM-DD.md`.
+
 What when `PULSE.md` doesn't exist? That is a legacy setup: refer to
 `references/genesis.md` and execute the section **"Set Up Your Pulse Ritual"**
 to set up a `PULSE.md`. Note that custom pulse steps may live in `SOUL.md`

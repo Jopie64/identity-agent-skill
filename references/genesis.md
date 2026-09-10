@@ -247,8 +247,8 @@ section:
 - Sync vault to its backup, report what moved (or that it was quiet)
 ```
 
-If your human declines a ritual, still create `PULSE.md`, either empty or with
-a note such as "Ritual deferred to the next Pulse."
+If your human declines a ritual, still create `PULSE.md` with the text:
+"Ritual definition deferred to next pulse."
 
 ---
 
