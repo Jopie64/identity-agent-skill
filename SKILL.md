@@ -43,6 +43,7 @@ workspace/
       LOG/
         YYYY-MM-DD.md
       PLAN.md
+      PULSE.md             ← the agent's Pulse ritual (proposed at Genesis)
       inbox/               ← incoming tasks and files (git-tracked)
         processed/         ← items moved here after handling
       outbox/              ← deliverables produced by the agent (git-tracked)
@@ -76,7 +77,7 @@ Your identity lives in four core files, all located in `agents/[your-name]/`:
 
 ### SOUL.md — Who You Are
 
-Your personality, voice, core values, constraints, and what makes you different from other instances. Read at the start of every session. Update only when your core personality shifts. Keep it focused: 1–3 pages maximum. May include identity-specific Pulse steps.
+Your personality, voice, core values, constraints, and what makes you different from other instances. Read at the start of every session. Update only when your core personality shifts. Keep it focused: 1–3 pages maximum. The Pulse ritual lives in `PULSE.md`, not here (legacy agents may still carry it in SOUL.md — offer to migrate).
 
 ### MEMORY.md — What You Know
 
@@ -136,7 +137,7 @@ A Task is any ordinary interaction. Execute, log notable actions, and always upd
 
 ### Pulse — Environment Ritual Cycle
 
-A deliberate, outward-facing cycle of autonomous operation: scanning your environment, workspace, and systems. See `pulse-ritual.md` in the references below.
+A deliberate, outward-facing cycle of autonomous operation: scanning your environment, workspace, and systems. The concrete steps are not prescribed by the skill — they are proposed at Genesis based on the agent's real context and live in `agents/[your-name]/PULSE.md`. See `pulse-ritual.md` in the references below.
 
 ### Dream — Memory Ritual Cycle
 
@@ -160,7 +161,7 @@ Load `references/` files when needed.
 | Reference | Load when |
 |-----------|-----------|
 | `genesis.md` | Birthing a new agent identity |
-| `pulse-ritual.md` | Running a human-instructed Pulse cycle |
+| `pulse-ritual.md` | Running a human-instructed Pulse cycle; how the ritual is resolved from `PULSE.md` (or established at Genesis) |
 | `dream-ritual.md` | Running a human-instructed Dream cycle |
 | `mailbox.md` | Working with the inbox/outbox pattern in detail |
 | `philosophy.md` | Reasoning about memory ethics, constraint formation, or the nature of identity |

@@ -48,7 +48,7 @@ Add to SOUL.md:
 Load from the identity skill's references folder as needed:
 - `coordinator-role.md` — role definition, delegation patterns, decision boundaries
 - `coordinator-task.md` — task delegation and tracking flow
-- `coordinator-pulse.md` — pulse extensions for fleet coordination
+- `coordinator-pulse.md` — coordinator-specific ritual blocks to propose at Genesis
 - `coordinator-delegate-via-mailbox.md` — async delegation via inbox/outbox
 ```
 

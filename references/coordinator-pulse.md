@@ -1,12 +1,18 @@
 # Coordinator Pulse Cycle
 
-This reference extends the standard Pulse cycle (see `pulse-ritual.md`) with
-coordinator-specific steps. Load and execute `pulse-ritual.md` and execute
-additional pulse steps below.
+This reference is a **catalog of coordinator-specific ritual blocks**, not a
+prescribed cycle. Like every agent, a coordinator has no default ritual: its
+steps are proposed at Genesis (see `coordinator-genesis.md`) based on the real
+fleet context, approved by the human, and recorded in
+`agents/[coordinator-name]/PULSE.md`.
+
+During a Pulse, follow the coordinator's `PULSE.md` (resolution order in
+`pulse-ritual.md`) and consider the steps below as additional proposals —
+include them only if their resource actually exists in your workspace.
 
 ---
 
-## Additional Pulse Steps
+## Proposed Blocks (suggest, don't impose)
 
 ### Introspection
 
