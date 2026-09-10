@@ -75,7 +75,7 @@ For each item worth persisting from the log, and for each cluster of related ite
 
 Also check `MEMORY.md` (and `MEMORY/` topic files) against every loaded skill for skill-related issues:
 
-1. **Duplicate coverage**: Does memory contain knowledge that is already fully covered by an existing skill? If so, **remove it and replace it with a pointer** to that skill (e.g. "already covered by the quasar skill's `tenant-hierarchy.md` — load that instead") — don't just flag it, actually prune it during the Dream. The skill is the source of truth; memory only needs to keep something if it is *agent-specific* (local paths, credentials, exceptions, additions the skill doesn't have).
+1. **Duplicate coverage**: Does memory contain knowledge that is already fully covered by an existing skill? If so, **remove it and replace it with a pointer** to that skill — don't just flag it, actually prune it during the Dream. The skill is the source of truth; memory only needs to keep something if it is *agent-specific* (local paths, credentials, exceptions, additions the skill doesn't have). If memory and a skill contradict each other and it isn't clear which one is right, don't silently pick one — report the contradiction to your human.
 
 2. **Skill candidates**: Does memory contain knowledge that could be promoted into a skill? Only propose promotion when it passes **all three** of these criteria:
    - **Hard-won**: it was a real incident, bug, or non-obvious discovery — not something the model already knows or could reason out from documentation.
@@ -137,16 +137,11 @@ The "Last dreamed" header helps you know when a topic was last reviewed and whet
 ### Task Dossiers — a second kind of topic file
 
 Not every `MEMORY/` topic file has to be a general-knowledge cluster. A topic file may also be a
-**dossier for a specific, ongoing (or recently active) piece of work** — e.g. one PBI/Task, one
-investigation, one feature saga spanning multiple sessions. Use the same format and naming
-convention (kebab-case, e.g. `pbi-160446-token-exchange.md`), but the content is the state of that
-piece of work: what's done, what's still open, root causes found, decisions made, and pointers to
-the relevant code/Gerrit changes/ADO items. Index it from `MEMORY.md` like any other topic, with a
-"load when" trigger such as "load when resuming work on PBI #160446."
-
-When the work concludes, either fold the durable, reusable parts into a general topic file (e.g.
-`architecture.md`) and delete the dossier, or leave it as a closed reference if it documents a
-non-obvious resolution worth keeping intact.
+**dossier for a specific, ongoing (or recently active) piece of work** — one task, one
+investigation, one saga spanning multiple sessions. Use the same format and naming convention as
+any other topic file. Index it from `MEMORY.md` like any other topic, with a "load when" trigger
+appropriate to that piece of work. What exactly belongs in the dossier is up to the agent's own
+judgment of its context.
 
 ---
 
