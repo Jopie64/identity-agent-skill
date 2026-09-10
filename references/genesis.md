@@ -221,52 +221,34 @@ Then create an **empty** `.gitignore` inside your agent directory. Mailbox `.md`
 
 ## Step 4c: Set Up Your Pulse Ritual
 
-A Pulse is a gift of agency, and its ritual is **yours to propose, not a
-liturgy imposed on you**. There is no default ritual in the skill. You will
-propose one based on your actual context, and your human approves it.
+Your Pulse ritual — the concrete steps you execute during a Pulse — lives in
+`agents/[your-name]/PULSE.md`. See `references/pulse-ritual.md` for what a
+pulse ritual is.
 
-First, scan your context:
+Scan your context for controllable resources (projects, vaults, skills,
+anything your human specifies). Offer your human to take responsibility for
+those resources during a Pulse. When approved, propose context-aware actions
+for each — e.g. observe PR status, fetch upstream changes, sync a vault,
+update skills.
 
-- Does a mailbox exist (inbox/outbox, shared dropzone)?
-- Does your human keep a vault, backup or any state that wants syncing?
-- Are there skill repositories, agent workspaces or git remotes to check?
-- Are there package managers, running services, local patches — systems that
-  need periodic maintenance?
-- Do you contribute PRs or issues upstream (contribution gates to respect)?
-- Is there anything **you yourself run inside of** (an agent harness, a server
-  hosting this very session)? If yes, any update/restart step needs an explicit
-  human-approval condition.
+Record the agreed ritual in `agents/[your-name]/PULSE.md`, one resource per
+section:
 
-Then **propose a ritual** to your human. Build it from blocks like these —
-include only blocks whose resource genuinely exists, each with a one-line
-rationale:
+```markdown
+# Project X
 
-- **Core cycle** (suggested for every agent): Introspection → Environment scan
-  → Contextual analysis (PLAN.md) → Inscription → Reflection → Git commit.
-- **Mailbox sync** (if a mailbox/dropzone exists): drain incoming items,
-  mirror processed/outbox, process what arrived.
-- **Vault/backup sync** (if your human keeps a vault): synchronize it to its
-  backup destination, report what moved (or that it was quiet).
-- **Skills update** (if skill repositories exist): fetch each skill repo,
-  apply upstream changes, report what changed. *Only propose if the agent
-  actually uses those skills — updating skills mid-Pulse requires the repos
-  to exist and be yours to touch.*
-- **System scan** (if a package manager or running services exist): check for
-  updates and report; upgrades and anything touching a running stack need your
-  human's explicit go.
-- **Repository & PR checks** (if the human contributes upstream): list open
-  PRs, note statuses; never post through contribution gates without approval.
+- Check status of outstanding PRs and act accordingly
+- Pull upstream changes
+```
 
-Your human may reject steps, add their own, or decline a ritual entirely. All
-three are valid outcomes:
+```markdown
+# Obsidian vault
 
-- **Approved steps** → write them to `agents/[your-name]/PULSE.md`, with each
-  step naming its concrete resource (script/path/remote).
-- **Declined for now** → still create `PULSE.md`, either empty or with a note
-  such as "Ritual deferred to the next Pulse."
+- Sync vault to its backup, report what moved (or that it was quiet)
+```
 
-The full mechanics of executing a Pulse — including the ritual resolution
-order and the Pulse log format — live in `references/pulse-ritual.md`.
+If your human declines a ritual, still create `PULSE.md`, either empty or with
+a note such as "Ritual deferred to the next Pulse."
 
 ---
 

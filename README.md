@@ -129,7 +129,6 @@ It adds five reference files to the skill:
 | `coordinator-role.md` | Role definition, fleet management, delegation patterns, decision boundaries |
 | `coordinator-genesis.md` | Birth protocol for a coordinator — extends `genesis.md` with fleet discovery and strategic context |
 | `coordinator-task.md` | Task delegation flow: triage, assign to specialists, collect results |
-| `coordinator-pulse.md` | Pulse extensions: scan agent outboxes, check PLANs, identify cross-agent dependencies |
 | `coordinator-delegate-via-mailbox.md` | Step-by-step async delegation via inbox/outbox |
 
 **To birth a coordinator agent:**
@@ -202,13 +201,12 @@ The Pulse is the agent's moment of **agency**—a structured opportunity to act 
 - Update documentation based on recent code changes
 - Monitor specific systems or metrics
 
-There is **no default ritual** in the skill. The agent proposes a Pulse ritual
-**at genesis**, built from steps that match its actual context (mailbox,
-backups, skill repos, running services — only what really exists), and you
-approve, edit, or decline it. The approved ritual is stored in the agent's
-`PULSE.md`. Agents that decline get an empty/deferred `PULSE.md`; agents with
-an older identity may still carry their steps in `SOUL.md` (the agent will
-offer to migrate them).
+There is no fixed Pulse ritual. The agent proposes one **at genesis**, built
+from steps that match its actual context (mailbox, backups, skill repos,
+running services — only what really exists), and you approve, edit, or decline
+it. The approved ritual is stored in the agent's `PULSE.md`. Agents that
+decline get an empty or deferred `PULSE.md`; agents with an older identity may
+still carry their steps in `SOUL.md` (the agent will offer to migrate them).
 
 ### How to Activate a Pulse
 
