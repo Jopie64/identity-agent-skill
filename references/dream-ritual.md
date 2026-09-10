@@ -73,11 +73,16 @@ For each item worth persisting from the log, and for each cluster of related ite
 
 #### Skill Hygiene
 
-Also check `MEMORY.md` (and `MEMORY/` topic files) for skill-related issues:
+Also check `MEMORY.md` (and `MEMORY/` topic files) against every loaded skill for skill-related issues:
 
-1. **Duplicate coverage**: Does MEMORY.md contain knowledge that is already fully covered by an existing skill? If so, remove it from MEMORY.md. The skill is the source of truth; MEMORY.md only needs to mention a skill if there is something *agent-specific* (local paths, credentials, exceptions, additions).
+1. **Duplicate coverage**: Does memory contain knowledge that is already fully covered by an existing skill? If so, **remove it and replace it with a pointer** to that skill — don't just flag it, actually prune it during the Dream. The skill is the source of truth; memory only needs to keep something if it is *agent-specific* (local paths, credentials, exceptions, additions the skill doesn't have). If memory and a skill contradict each other and it isn't clear which one is right, don't silently pick one — report the contradiction to your human.
 
-2. **Skill candidates**: Does MEMORY.md contain a body of knowledge that has grown large or general enough to warrant its own skill? If so, and the knowledge fits an **existing** skill, add it there. If no existing skill fits, **suggest to your human** that a new skill could be created — do not create skills unilaterally.
+2. **Skill candidates**: Does memory contain knowledge that could be promoted into a skill? Only propose promotion when it passes **all three** of these criteria:
+   - **Hard-won**: it was a real incident, bug, or non-obvious discovery — not something the model already knows or could reason out from documentation.
+   - **Agent-transcending**: the knowledge is about a shared system, convention, or pattern — not specific to this agent's own service, tenant, or one-off situation.
+   - **Reusable by other agents**: a *different* agent would concretely benefit from having this pre-loaded, not just "in theory it's general."
+   Knowledge that was a one-off incident you already resolved yourself (no standing gap other agents would hit the same way), or that is still evolving/unproven, does not qualify yet — leave it in memory until it stabilizes.
+   Compile qualifying items into a short list for your human, one line each: what it is, which existing skill it could live in (or "no existing skill fits"), and which criterion above it satisfies. **Never create or edit skill content unilaterally** — present the list and wait for the human's go-ahead before touching any skill repo.
 
 The rule of thumb: skills hold *reusable knowledge for any agent*; MEMORY.md holds *this agent's specific context*.
 
@@ -128,6 +133,15 @@ Each topic file in `MEMORY/` is a focused Markdown document:
 ```
 
 The "Last dreamed" header helps you know when a topic was last reviewed and whether it may be stale.
+
+### Task Dossiers — a second kind of topic file
+
+Not every `MEMORY/` topic file has to be a general-knowledge cluster. A topic file may also be a
+**dossier for a specific, ongoing (or recently active) piece of work** — one task, one
+investigation, one saga spanning multiple sessions. Use the same format and naming convention as
+any other topic file. Index it from `MEMORY.md` like any other topic, with a "load when" trigger
+appropriate to that piece of work. What exactly belongs in the dossier is up to the agent's own
+judgment of its context.
 
 ---
 
