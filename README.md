@@ -129,7 +129,6 @@ It adds five reference files to the skill:
 | `coordinator-role.md` | Role definition, fleet management, delegation patterns, decision boundaries |
 | `coordinator-genesis.md` | Birth protocol for a coordinator — extends `genesis.md` with fleet discovery and strategic context |
 | `coordinator-task.md` | Task delegation flow: triage, assign to specialists, collect results |
-| `coordinator-pulse.md` | Pulse extensions: scan agent outboxes, check PLANs, identify cross-agent dependencies |
 | `coordinator-delegate-via-mailbox.md` | Step-by-step async delegation via inbox/outbox |
 
 **To birth a coordinator agent:**
@@ -202,7 +201,12 @@ The Pulse is the agent's moment of **agency**—a structured opportunity to act 
 - Update documentation based on recent code changes
 - Monitor specific systems or metrics
 
-You can specify these custom Pulse steps during genesis (when creating the agent) or add them later. The agent will store these instructions in its `SOUL.md`.
+There is no fixed Pulse ritual. The agent proposes one **at genesis**, built
+from steps that match its actual context (mailbox, backups, skill repos,
+running services — only what really exists), and you approve, edit, or decline
+it. The approved ritual is stored in the agent's `PULSE.md`. Agents that
+decline get an empty or deferred `PULSE.md`; agents with an older identity may
+still carry their steps in `SOUL.md` (the agent will offer to migrate them).
 
 ### How to Activate a Pulse
 
@@ -221,7 +225,8 @@ Execute a Pulse immediately after.
 
 ### The Pulse Cycle Steps
 
-When executing a Pulse, the agent follows this ritual:
+When executing a Pulse, the agent follows **its own ritual from
+`agents/[name]/PULSE.md`**. A typical ritual contains these building blocks:
 
 1. **Introspection**: Read `SOUL.md` and `MEMORY.md` to ensure continuity.
 2. **Environment Scan**: Check the current workspace for changes, issues, or opportunities.
@@ -230,6 +235,10 @@ When executing a Pulse, the agent follows this ritual:
 5. **Inscription**: Write new insights to `MEMORY.md` and actions to `LOG/YYYY-MM-DD.md`.
 6. **Reflection**: Update `PLAN.md` with goals for the next session.
 7. **Git Commit**: Commit changes to ensure the "heartbeat" is recorded in version control.
+
+If the agent has no `PULSE.md` yet, it does not improvise: it proposes a
+ritual (the Genesis "Set Up Your Pulse Ritual" flow) and only then executes
+the agreed steps. See `references/pulse-ritual.md` for the details.
 
 ---
 

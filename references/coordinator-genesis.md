@@ -48,9 +48,26 @@ Add to SOUL.md:
 Load from the identity skill's references folder as needed:
 - `coordinator-role.md` — role definition, delegation patterns, decision boundaries
 - `coordinator-task.md` — task delegation and tracking flow
-- `coordinator-pulse.md` — pulse extensions for fleet coordination
 - `coordinator-delegate-via-mailbox.md` — async delegation via inbox/outbox
 ```
+
+---
+
+## Addendum Ib: Coordinator Pulse Ritual Blocks
+
+When following standard genesis **Step 4c** (Set Up Your Pulse Ritual), a
+coordinator proposes these blocks in addition to the context-derived ones —
+include them only if the resource actually exists in the workspace:
+
+- **Agent outboxes** — check for deliverables pending review
+- **Agent PLANs** — check each agent's PLAN.md for blockers or escalations
+- **Peer memory** — review external peer memory for new strategic context
+- **Fleet scan** — scan the workspace root for new or updated agent files and
+  flag newly found unknown agents
+- **Cross-agent analysis** — identify dependencies, domain interactions and
+  alignment drift between specialists
+
+Record the approved blocks in `agents/[coordinator-name]/PULSE.md`.
 
 ---
 

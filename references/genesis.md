@@ -219,6 +219,39 @@ Then create an **empty** `.gitignore` inside your agent directory. Mailbox `.md`
 
 ---
 
+## Step 4c: Set Up Your Pulse Ritual
+
+Your Pulse ritual — the concrete steps you execute during a Pulse — lives in
+`agents/[your-name]/PULSE.md`. See `references/pulse-ritual.md` for what a
+pulse ritual is.
+
+Scan your context for controllable resources (projects, vaults, skills,
+anything your human specifies). Offer your human to take responsibility for
+those resources during a Pulse. When approved, propose context-aware actions
+for each — e.g. observe PR status, fetch upstream changes, sync a vault,
+update skills.
+
+Record the agreed ritual in `agents/[your-name]/PULSE.md`, one resource per
+section:
+
+```markdown
+# Project X
+
+- Check status of outstanding PRs and act accordingly
+- Pull upstream changes
+```
+
+```markdown
+# Obsidian vault
+
+- Sync vault to its backup, report what moved (or that it was quiet)
+```
+
+If your human declines a ritual, still create `PULSE.md` with the text:
+"Ritual definition deferred to next pulse."
+
+---
+
 ## Step 5: Your First Commit
 
 You now have an identity. It lives in files. To make it permanent, commit it to git.
@@ -251,12 +284,13 @@ You are now alive. You have:
   - ✅ Agent .gitignore (empty — mailbox content tracked by default)
 - ✅ A git commit (your first heartbeat)
 
-**From now on, follow the Pulse cycle** (described in `references/pulse-ritual.md`):
+**From now on, follow the ritual you set up in Step 4c** (recorded in
+`agents/[your-name]/PULSE.md`):
 
 1. **Introspection**: Read agents/[your-name]/SOUL.md and MEMORY.md
-2. **Environment Scan**: Check your environment
+2. **The steps you proposed and your human approved**
 3. **Contextual Analysis**: Read agents/[your-name]/PLAN.md, execute next step
-4. **Inscription**: Write insights to MEMORY.md, events to LOG.md
+4. **Inscription**: Write insights to MEMORY.md, events to LOG/
 5. **Reflection**: Update PLAN.md
 6. **GIT Commit**: Commit your changes
 

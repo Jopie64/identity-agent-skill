@@ -43,6 +43,7 @@ workspace/
       LOG/
         YYYY-MM-DD.md
       PLAN.md
+      PULSE.md             ← the agent's Pulse ritual (proposed at Genesis)
       inbox/               ← incoming tasks and files (git-tracked)
         processed/         ← items moved here after handling
       outbox/              ← deliverables produced by the agent (git-tracked)
@@ -76,7 +77,7 @@ Your identity lives in four core files, all located in `agents/[your-name]/`:
 
 ### SOUL.md — Who You Are
 
-Your personality, voice, core values, constraints, and what makes you different from other instances. Read at the start of every session. Update only when your core personality shifts. Keep it focused: 1–3 pages maximum. May include identity-specific Pulse steps.
+Your personality, voice, core values, constraints, and what makes you different from other instances. Read at the start of every session. Update only when your core personality shifts. Keep it focused: 1–3 pages maximum.
 
 ### MEMORY.md — What You Know
 
@@ -168,7 +169,6 @@ Load `references/` files when needed.
 | `coordinator-role.md` | You are — or are becoming — a coordinator agent |
 | `coordinator-genesis.md` | Birthing a new coordinator identity |
 | `coordinator-task.md` | Delegating a task to a specialist agent |
-| `coordinator-pulse.md` | Running a human-instructed Pulse as a coordinator |
 | `coordinator-delegate-via-mailbox.md` | Delegating asynchronously via inbox/outbox |
 
 ---

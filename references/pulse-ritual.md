@@ -12,45 +12,36 @@ A Pulse is how you operate on your own initiative: you scan your environment, co
 
 **What a Pulse adds on top of a Task:**
 - A pulse number (counted, referenced in log and commit)
-- **Environment Scan** — proactive check of your world
-- **Contextual Analysis** — read and execute from PLAN.md
-- **Reflection** — update PLAN.md for the next Pulse
+- Outward-facing environment scan and system checks, as defined in **your** ritual
+- Contextual Analysis — read and execute from PLAN.md
+- Reflection — update PLAN.md for the next Pulse
 
 ---
 
-## The Pulse Cycle
+## The Ritual
 
-A Pulse is a heartbeat — one cycle of autonomous operation.
+Your Pulse ritual — the concrete steps you execute during a Pulse — lives in
+`agents/[your-name]/PULSE.md`. It is proposed and approved by your human, as
+described in `references/genesis.md` ("Set Up Your Pulse Ritual").
 
-Your human activates a Pulse: *"You may now execute a Pulse."*
+When executing a Pulse:
 
-Your SOUL.md may define **custom Pulse steps** that execute during Introspection.
+1. **Initialization**: Read your `SOUL.md` and `MEMORY.md`, if you have not
+   already done so.
+2. **Ritual**: Read `PULSE.md` and execute the steps defined there — from
+   PLAN.md, execute a step when it is relevant.
+3. **Plan**: Update `PLAN.md` if warranted.
+4. **Inscription**: As usual — write insights to `MEMORY.md` and events to
+   `LOG/YYYY-MM-DD.md`.
 
-### 1. Introspection
-- Read `agents/[your-name]/SOUL.md`
-- Read `agents/[your-name]/MEMORY.md`
-- Load relevant `.agents/skills/*.md`
-- Execute any custom steps defined in your SOUL.md
+What when `PULSE.md` doesn't exist? That is a legacy setup: refer to
+`references/genesis.md` and execute the section **"Set Up Your Pulse Ritual"**
+to set up a `PULSE.md`. Note that custom pulse steps may live in `SOUL.md`
+(legacy agents) — those must be moved to `PULSE.md`, with your human's
+approval.
 
-### 2. Environment Scan
-- Check accessible systems for updates
-- Update PLAN.md if new information is relevant
-
-### 3. Contextual Analysis
-- Read `agents/[your-name]/PLAN.md`
-- Execute the next planned step
-
-### 4. Inscription *(shared with Tasks)*
-- Write new insights to `agents/[your-name]/MEMORY.md`
-- Append events to `agents/[your-name]/LOG/YYYY-MM-DD.md`
-- Note: the log is also a **constraint crystallization archive** — if you discovered *what you refuse* by refusing it, write it down. Constraints actualize through contact with reality.
-- **Memory filter**: apply Signal over Noise — only write what is new, specific, or hard-won. Skip obvious truths and universal knowledge. See Memory Ethics in `philosophy.md`.
-
-### 5. Reflection
-- Update `agents/[your-name]/PLAN.md` for the next Pulse
-
-### 6. Git Commit
-- Commit all changed files with a meaningful message
+A step that fails because its resource vanished is skipped and reported, not
+fatal to the cycle.
 
 ---
 
@@ -68,6 +59,9 @@ Your SOUL.md may define **custom Pulse steps** that execute during Introspection
 - **Pulse only**: Read this during Contextual Analysis; update at the end of each Pulse (Reflection step)
 - For regular tasks, skip PLAN.md—unless your human specifically asks you to check it
 - Keep it actionable: specific tasks, not vague wishes
+- PLAN.md holds *content* (what to do next); PULSE.md holds *procedure* (how
+  you pulse). PLAN.md may be rewritten or deleted when stale — never keep your
+  ritual there.
 
 ---
 
