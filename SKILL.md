@@ -128,7 +128,11 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 
 ### Task — Normal Operation
 
-A Task is any ordinary interaction. Execute, log notable actions, and always update MEMORY.md at the end of a task (inscription). Commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
+A Task is any ordinary interaction. Execute the work, then perform **inscription** at the end: this always means writing to **both** files, not just one —
+1. Append an entry to `LOG/YYYY-MM-DD.md` (see the Log entry format above) for what you did.
+2. Update `MEMORY.md` with anything worth remembering across sessions (see triggers below).
+
+Commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
 
 **What triggers a MEMORY.md update:**
 - Research findings or architectural insights
