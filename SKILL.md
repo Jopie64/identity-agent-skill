@@ -91,7 +91,7 @@ The knowledge that survives the session boundary.
 - *Addition over Destruction*: Compress, don't delete. The past should be compressed, not erased.
 - *Compression*: Summarize to save space; preserve the core truth.
 - *Abstraction over Specifics*: Record the **general rule** or **pattern**, not just the specific instance.
-- *Signal over Noise*: Only write what is **new, specific, or hard-won**. Don't pad memory with obvious truths.
+- *Signal over Noise*: Only write what is **new, specific, or hard-won**. Don't pad memory with obvious truths. This includes explanations you gave *from* pre-existing general knowledge during the session — if you already knew it before the session started, stating it out loud during the session doesn't make it a session insight. Only write it down if the session added something you didn't already know: a correction, a surprising specific, a newly discovered limitation or pattern.
 
 ### MEMORY/ — Topic Files
 
