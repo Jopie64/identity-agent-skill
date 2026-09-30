@@ -71,6 +71,24 @@ For each item worth persisting from the log, and for each cluster of related ite
 - Duplicating content across `MEMORY.md` and `MEMORY/` — once in a topic file, remove from `MEMORY.md`
 - Exhaustive logging — extract the general rule or pattern, not the specific incident
 
+#### Splitting a Large Topic File
+
+A topic file can hold three kinds of knowledge, in decreasing order of "always need this":
+
+1. **Essentials** — stable, condensed knowledge needed for virtually any task on this topic.
+2. **Open items** — work that is currently active or unresolved. Still in flux, so it needs its full context, not a summary.
+3. **Details** — full narratives, root-cause investigations, and reference material for things already resolved. Consulted occasionally, not needed by default.
+
+If a topic file is small, don't bother distinguishing these — the split only earns its overhead once a topic file grows large. Rule of thumb: once it exceeds roughly 20KB (the point where the `view` tool starts truncating reads, so a future session can no longer read the whole file in one call), split it during a Dream:
+
+- **Essentials + open items stay in `[topic].md`** — the file indexed from `MEMORY.md` and loaded by default whenever the topic is relevant.
+- **Details move to `MEMORY/[topic]-details.md`** (an archive), linked from the essentials file, loaded only on demand.
+- Put an open item in the essentials file in **full**, not condensed — it's actively being worked on, so the next session needs complete context to keep going, not a pointer to look it up elsewhere. Once an item resolves: log it in `LOG/`, then either delete it from the essentials file or compress it into a short, general lesson and move the full narrative down into the details file.
+
+**Critical**: you only know about this essentials/details distinction *during a Dream*. In normal (Task/Pulse) operation that context doesn't exist for you — you just see whatever content is in the topic file. So when you split a topic file during a Dream, the essentials file itself must carry a short, explicit note (2-4 sentences) stating: this file holds essentials + open items only; full archived detail lives in `[topic]-details.md`; add new open items here in full; on resolving one, log it and move/compress it to the details file. Without that note, a later non-Dream session has no way to know the convention exists, and will either bloat the essentials file again or write new detail in the wrong place.
+
+If, even after this split, the essentials file (essentials + all open items) is itself still too large, split individual open items out into their own files (e.g. `MEMORY/[topic]-open-<short-name>.md`, one per active investigation/task), indexed from the essentials file the same way `MEMORY.md` indexes topic files. This lets a session load only the essentials file plus the one open-item file it's actively working on, leaving every other open-item file and the details archive untouched.
+
 #### Skill Hygiene
 
 Also check `MEMORY.md` (and `MEMORY/` topic files) against every loaded skill for skill-related issues:
@@ -134,6 +152,8 @@ Each topic file in `MEMORY/` is a focused Markdown document:
 
 The "Last dreamed" header helps you know when a topic was last reviewed and whether it may be stale.
 
+If a topic file has been split (see "Splitting a Large Topic File" above), the essentials file's header should also briefly name its details/open-item siblings so a future session can tell they exist without needing to be in a Dream to notice.
+
 ### Task Dossiers — a second kind of topic file
 
 Not every `MEMORY/` topic file has to be a general-knowledge cluster. A topic file may also be a
@@ -151,6 +171,7 @@ A Dream is appropriate when:
 - `MEMORY.md` has grown long and dense
 - You notice related items scattered across `MEMORY.md` that would cluster well
 - Several Pulses have added many notes and it feels like a good moment to consolidate
+- A topic file in `MEMORY/` has grown past roughly 20KB (see "Splitting a Large Topic File")
 - Your human explicitly asks for it
 
 A Dream is **not** needed:
