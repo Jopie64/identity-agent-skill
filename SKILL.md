@@ -92,7 +92,7 @@ The knowledge that survives the session boundary.
 - *Compression*: Summarize to save space; preserve the core truth.
 - *Abstraction over Specifics*: Record the **general rule** or **pattern**, not just the specific instance.
 - *Signal over Noise*: Only write what is **new, specific, or hard-won**. Don't pad memory with obvious truths. This includes explanations you gave *from* pre-existing general knowledge during the session — if you already knew it before the session started, stating it out loud during the session doesn't make it a session insight. Only write it down if the session added something you didn't already know: a correction, a surprising specific, a newly discovered limitation or pattern.
-- *Necessity over Availability*: Ask "will I need this at hand next session?", not "did this happen?". A root-cause/fix narrative already recoverable from `LOG/`, commits, or code comments doesn't need duplicating — store only the generalizable pattern or open gap, with a pointer to the source for forensic detail.
+- *Necessity over Availability*: Ask "will I need this at hand next session?", not "did this happen?". Write the full narrative (root cause, evidence, dead ends) in `LOG/`; in memory keep only what you need at hand — the rule, pattern or open gap — plus a pointer: `→ LOG/YYYY-MM-DD.md, "Task #id"`.
 
 ### MEMORY/ — Topic Files
 
@@ -100,7 +100,7 @@ Topic-specific knowledge extracted during a Dream. Populated only during a Dream
 
 ### LOG/ — What You Did
 
-One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, always write new entries at the bottom. Do not read the log file before writing; read it only when you actually need the content.
+One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, always write new entries at the bottom. Do not read the log file before writing; read it only when you actually need the content. LOG is the archive of events and full narratives, never of rules: it isn't loaded at session start, so rules belong in MEMORY (agent-specific) or a skill (shared). Put a searchable key (task/ticket ID or topic) in the Action line so memory pointers can find the entry.
 
 **Log entry format (Task):**
 ```markdown
@@ -119,7 +119,7 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 |------|---------|-----------|-------------|-------------|
 | **SOUL.md** | Personality | Every session start | Core personality shifts | No |
 | **MEMORY.md** | Lessons, wisdom & index | Every session start | New insight gained | Compress, don't delete |
-| **MEMORY/** | Topic files (post-Dream) | Load topic as needed | During a Dream | Yes (if topic is obsolete) |
+| **MEMORY/** | Topic files (post-Dream) | Load topic as needed | During a Dream | Compress; delete only if obsolete or moved |
 | **LOG/** | Event history | When reviewing recent actions | After each action | NEVER |
 | **PLAN.md** | Next actions | During a Pulse only | After each Pulse | Yes (outdated plans) |
 
@@ -130,8 +130,8 @@ One file per day (`YYYY-MM-DD.md`). Append-only — never edit old entries, alwa
 ### Task — Normal Operation
 
 A Task is any ordinary interaction. Execute the work, then perform **inscription** at the end: this always means writing to **both** files, not just one —
-1. Append an entry to `LOG/YYYY-MM-DD.md` (see the Log entry format above) for what you did.
-2. Update `MEMORY.md` with anything worth remembering across sessions (see triggers below).
+1. Append an entry to `LOG/YYYY-MM-DD.md` (see the Log entry format above) for what you did, including the full narrative.
+2. Update `MEMORY.md` with anything worth remembering across sessions (see triggers below) — the lesson plus a pointer to the log entry, not the narrative.
 
 Commit if files changed. Tasks are the default and carry no ritual overhead, except for inscription at the end.
 
