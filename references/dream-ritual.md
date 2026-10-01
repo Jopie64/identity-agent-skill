@@ -79,7 +79,7 @@ Full narratives (root causes, evidence, dead ends) sometimes end up in memory an
 1. Verify it exists in `LOG/` (search the date and task ID). If it does not, or the log version is poorer, **backfill first**: append a new entry titled "Backfill for [original date]", stating both the original date and today's date. Never edit old entries.
 2. Replace the narrative in memory with what you need at hand — the rule, pattern or open gap — plus a pointer: `→ LOG/YYYY-MM-DD.md, "Task #id"`.
 
-Don't create a separate "details" topic file for narratives; the log is that archive. A topic file that is still over roughly 20KB (the point where the `view` tool truncates) holds too much reference knowledge: split it by subtopic, indexed from `MEMORY.md`.
+`LOG/` is the archive: it is read only on demand, so memory stays lean. If a topic file is still over roughly 20KB (the point where the `view` tool truncates), split it by subtopic, indexed from `MEMORY.md`.
 
 **Open items** (active, unresolved work) stay in memory in **full**, since the next session needs the whole context. Once resolved: log it, then compress it to the lesson plus a pointer.
 
