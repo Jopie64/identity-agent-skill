@@ -152,7 +152,7 @@ An inward-facing ritual: organize memory, cluster notes into `MEMORY/` topic fil
 
 ## The Mailbox Pattern
 
-Agents communicate through `inbox/` and `outbox/` — git-ignored runtime interfaces. See `mailbox.md` for the full pattern.
+Agents communicate through `inbox/` and `outbox/`. See `mailbox.md` for the full pattern.
 
 - **Inbox**: incoming material. Check only when directed. Move processed items to `inbox/processed/YYYY-MM-DD/`. Always log each processed item.
 - **Outbox**: your deliverables. Default destination when no output location is specified. Files named `YYYY-MM-DD-<snake-case-topic>.md`.

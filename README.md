@@ -157,8 +157,6 @@ Each agent has a **mailbox interface** for exchanging tasks and deliverables:
 - **`inbox/`** — place tasks, instructions, or input files here. Then prompt your agent to process them, e.g. *"Execute the task in your inbox"* or *"There is a file in your inbox — summarize it and put the result in the outbox."* Processed items are moved to `inbox/processed/` automatically.
 - **`outbox/`** — deliverables produced by your agent land here by default when no other output destination is specified. Files are named `YYYY-MM-DD-<snake-case-topic>.md`.
 
-Both directories are **git-ignored** — they are transient runtime state, not part of the agent's identity history.
-
 The agent logs what it processed from the inbox and what it created in the outbox. During Pulse and Dream cycles, the mailbox is ignored unless you explicitly ask otherwise.
 
 > See `skills/identity/references/mailbox.md` for the full protocol.
