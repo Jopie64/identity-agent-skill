@@ -217,7 +217,7 @@ Then create an **empty** `.gitignore` inside your agent directory. Mailbox `.md`
 
 > See `skills/identity/references/mailbox.md` for the full inbox/outbox protocol.
 
-Also make sure `agents/.gitattributes` exists (shared by all agents, not per agent) so line endings stay consistent across tools and platforms. It needs at least `text=auto`, preferably with `*.md linguist-detectable` so Markdown counts as source on GitHub. If it is missing, add it and renormalize.
+Also make sure `agents/.gitattributes` exists. It needs at least `text=auto`, preferably with `*.md linguist-detectable` so Markdown counts as source on GitHub. If it is missing, add it and renormalize.
 
 ---
 
