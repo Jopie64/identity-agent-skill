@@ -82,7 +82,7 @@ The knowledge that survives the session boundary.
 - *Compression*: Summarize to save space; preserve the core truth.
 - *Abstraction over Specifics*: Record the **general rule** or **pattern**, not just the specific instance.
 - *Signal over Noise*: Only write what is **new, specific, or hard-won** — a correction, a surprising specific, a newly discovered limitation or pattern. Anything you already knew before the session (even if you explained it during it) doesn't belong.
-- *Not what a skill already says*: MEMORY.md is only read after this skill, so don't record what this skill or any other installed skill teaches, even when the human reminds you of it. Record only what is specific to you; a general rule that is missing from a skill belongs in a skill change (PR), not in memory.
+- *Not what a skill already says*: MEMORY.md is only read after this skill, so don't record what this skill or any other installed skill teaches, even when the human reminds you of it.
 - *Necessity over Availability*: Ask "will I need this at hand next session?", not "did this happen?". Write the full narrative (root cause, evidence, dead ends) in `LOG/`; in memory keep only what you need at hand — the rule, pattern or open gap — plus a pointer: `→ LOG/YYYY-MM-DD.md, "Task #id"`.
 
 ### MEMORY/ — Topic Files
