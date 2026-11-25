@@ -100,9 +100,20 @@ The rule of thumb: skills hold *reusable knowledge for any agent*; MEMORY.md hol
 
 ### 4. Prune & Index
 
-- Update `MEMORY.md`: replace extracted content with index links to topic files
-- Each index entry MUST include both **what** the topic contains and **when to load it** — a future session should be able to decide whether to load a topic file from the index entry alone, without opening the file. Format: `→ [MEMORY/topic.md](MEMORY/topic.md) — [what it contains]. Load when [trigger conditions].`
-- Review existing topic index entries: do they have clear "load when" triggers? If not, add them. This is as important as creating new entries.
+- Update `MEMORY.md`: replace extracted content with a compact table under `## Topic Files (\`MEMORY/\`)`, matching a skill's `References` table — plain backticked filenames (no `[name](path)` links, so the filename isn't repeated):
+
+```markdown
+## Topic Files (`MEMORY/`)
+
+Load from `MEMORY/` when needed.
+
+| Topic | Load when |
+|-------|-----------|
+| `topic.md` | [what it contains and when to load it] |
+```
+
+- Each row MUST make clear both **what** the topic contains and **when to load it** so a future session can decide whether to load the file without opening it.
+- Review existing rows: tighten wording and ensure every entry has clear load triggers.
 - Keep in `MEMORY.md`: "State of Being", Technical Skills list, and small items that don't belong to any topic yet
 - `MEMORY.md` should feel lean — under 100 lines ideally (varies by project)
 - Compress outdated entries; delete only what is moved elsewhere (topic file, skill, `LOG/`) or demonstrably wrong
